@@ -11,13 +11,11 @@ namespace ejercicio02
     {
         public Venta(string tipo, decimal cantidad, decimal total)
         {
-            this.Fecha = DateTime.Now;
             this.Tipo = tipo;
             this.Cantidad = cantidad;
             this.Total = total;
         }
 
-        public DateTime Fecha { get; private set; }
         public string Tipo { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Total { get; set; }

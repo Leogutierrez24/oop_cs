@@ -9,7 +9,7 @@ namespace ejercicio02
 {
     public class Surtidor
     {
-        public const decimal LIMITE = 100;
+        private const decimal LIMITE = 100;
 
         private string _nafta;
         private decimal _precio;

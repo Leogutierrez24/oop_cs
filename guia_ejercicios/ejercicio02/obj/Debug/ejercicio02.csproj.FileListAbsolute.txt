@@ -1,0 +1,12 @@
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\bin\Debug\ejercicio02.exe.config
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\bin\Debug\ejercicio02.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\bin\Debug\ejercicio02.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.csproj.AssemblyReference.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.csproj.SuggestedBindingRedirects.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.Formulario_Principal.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.Properties.Resources.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.csproj.GenerateResource.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.csproj.CoreCompileInputs.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.Formulario_Venta.resources
