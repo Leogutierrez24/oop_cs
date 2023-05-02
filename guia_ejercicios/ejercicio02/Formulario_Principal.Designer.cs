@@ -31,15 +31,19 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.Surtidor1_groupBox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.GenerarVentaSurtidor01_btn = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.RecargarSurtidor1_btn = new System.Windows.Forms.Button();
+            this.GenerarVentaSurtidor01_btn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Surtidor2_groupBox = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.RecargarSurtidor2_btn = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
             this.GenerarVentaSurtidor02_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,6 +53,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.Surtidor3_groupBox = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.RecargarSurtidor3_btn = new System.Windows.Forms.Button();
             this.GenerarVentaSurtidor03_btn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -58,21 +64,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.General_comboBox = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.EjecutarOperacionVentas_btn = new System.Windows.Forms.Button();
+            this.Ventas_listBox = new System.Windows.Forms.ListBox();
             this.Ventas_comboBox = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.Ventas_listBox = new System.Windows.Forms.ListBox();
-            this.EjecutarOperacionVentas_btn = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EjecutarGeneral_btn = new System.Windows.Forms.Button();
@@ -118,50 +118,34 @@
             this.Surtidor1_groupBox.TabStop = false;
             this.Surtidor1_groupBox.Text = "Surtido 1";
             // 
-            // label2
+            // label21
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "tipo_nafta";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(88, 116);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 13);
+            this.label21.TabIndex = 10;
+            this.label21.Text = "0000,00";
             // 
-            // label3
+            // label22
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Precio: $";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 116);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.TabIndex = 9;
+            this.label22.Text = "Total vendido:";
             // 
-            // label4
+            // RecargarSurtidor1_btn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "0000,00";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Cantidad en el surtidor:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "00%";
+            this.RecargarSurtidor1_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RecargarSurtidor1_btn.Location = new System.Drawing.Point(9, 179);
+            this.RecargarSurtidor1_btn.Name = "RecargarSurtidor1_btn";
+            this.RecargarSurtidor1_btn.Size = new System.Drawing.Size(84, 37);
+            this.RecargarSurtidor1_btn.TabIndex = 8;
+            this.RecargarSurtidor1_btn.Text = "Recargar surtidor";
+            this.RecargarSurtidor1_btn.UseVisualStyleBackColor = true;
+            this.RecargarSurtidor1_btn.Click += new System.EventHandler(this.RecargarSurtidor1_btn_Click);
             // 
             // GenerarVentaSurtidor01_btn
             // 
@@ -174,16 +158,50 @@
             this.GenerarVentaSurtidor01_btn.UseVisualStyleBackColor = true;
             this.GenerarVentaSurtidor01_btn.Click += new System.EventHandler(this.GenerarVentaSurtidor01_btn_Click);
             // 
-            // RecargarSurtidor1_btn
+            // label6
             // 
-            this.RecargarSurtidor1_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RecargarSurtidor1_btn.Location = new System.Drawing.Point(9, 179);
-            this.RecargarSurtidor1_btn.Name = "RecargarSurtidor1_btn";
-            this.RecargarSurtidor1_btn.Size = new System.Drawing.Size(84, 37);
-            this.RecargarSurtidor1_btn.TabIndex = 8;
-            this.RecargarSurtidor1_btn.Text = "Recargar surtidor";
-            this.RecargarSurtidor1_btn.UseVisualStyleBackColor = true;
-            this.RecargarSurtidor1_btn.Click += new System.EventHandler(this.RecargarSurtidor1_btn_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(127, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "00%";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Cantidad en el surtidor:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(61, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "0000,00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Precio: $";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(85, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "tipo_nafta";
             // 
             // Surtidor2_groupBox
             // 
@@ -205,6 +223,15 @@
             this.Surtidor2_groupBox.TabStop = false;
             this.Surtidor2_groupBox.Text = "Surtido 2";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(87, 116);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 13);
+            this.label23.TabIndex = 12;
+            this.label23.Text = "0000,00";
+            // 
             // RecargarSurtidor2_btn
             // 
             this.RecargarSurtidor2_btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -215,6 +242,15 @@
             this.RecargarSurtidor2_btn.Text = "Recargar surtidor";
             this.RecargarSurtidor2_btn.UseVisualStyleBackColor = true;
             this.RecargarSurtidor2_btn.Click += new System.EventHandler(this.RecargarSurtidor2_btn_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 116);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(75, 13);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "Total vendido:";
             // 
             // GenerarVentaSurtidor02_btn
             // 
@@ -308,6 +344,24 @@
             this.Surtidor3_groupBox.TabStop = false;
             this.Surtidor3_groupBox.Text = "Surtido 3";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(87, 116);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(46, 13);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "0000,00";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 116);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(75, 13);
+            this.label26.TabIndex = 11;
+            this.label26.Text = "Total vendido:";
+            // 
             // RecargarSurtidor3_btn
             // 
             this.RecargarSurtidor3_btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -391,60 +445,6 @@
             this.progressBar3.Size = new System.Drawing.Size(197, 25);
             this.progressBar3.TabIndex = 0;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(88, 116);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 13);
-            this.label21.TabIndex = 10;
-            this.label21.Text = "0000,00";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(7, 116);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 13);
-            this.label22.TabIndex = 9;
-            this.label22.Text = "Total vendido:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(87, 116);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 13);
-            this.label23.TabIndex = 12;
-            this.label23.Text = "0000,00";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 116);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(75, 13);
-            this.label24.TabIndex = 11;
-            this.label24.Text = "Total vendido:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(87, 116);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(46, 13);
-            this.label25.TabIndex = 12;
-            this.label25.Text = "0000,00";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 116);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(75, 13);
-            this.label26.TabIndex = 11;
-            this.label26.Text = "Total vendido:";
-            // 
             // General_comboBox
             // 
             this.General_comboBox.FormattingEnabled = true;
@@ -499,6 +499,25 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ventas";
             // 
+            // EjecutarOperacionVentas_btn
+            // 
+            this.EjecutarOperacionVentas_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EjecutarOperacionVentas_btn.Location = new System.Drawing.Point(289, 17);
+            this.EjecutarOperacionVentas_btn.Name = "EjecutarOperacionVentas_btn";
+            this.EjecutarOperacionVentas_btn.Size = new System.Drawing.Size(76, 25);
+            this.EjecutarOperacionVentas_btn.TabIndex = 13;
+            this.EjecutarOperacionVentas_btn.Text = "Ejecutar";
+            this.EjecutarOperacionVentas_btn.UseVisualStyleBackColor = true;
+            this.EjecutarOperacionVentas_btn.Click += new System.EventHandler(this.EjecutarOperacionVentas_btn_Click);
+            // 
+            // Ventas_listBox
+            // 
+            this.Ventas_listBox.FormattingEnabled = true;
+            this.Ventas_listBox.Location = new System.Drawing.Point(9, 47);
+            this.Ventas_listBox.Name = "Ventas_listBox";
+            this.Ventas_listBox.Size = new System.Drawing.Size(356, 160);
+            this.Ventas_listBox.TabIndex = 18;
+            // 
             // Ventas_comboBox
             // 
             this.Ventas_comboBox.FormattingEnabled = true;
@@ -521,24 +540,6 @@
             this.label28.Size = new System.Drawing.Size(70, 13);
             this.label28.TabIndex = 16;
             this.label28.Text = "Operaciones:";
-            // 
-            // Ventas_listBox
-            // 
-            this.Ventas_listBox.FormattingEnabled = true;
-            this.Ventas_listBox.Location = new System.Drawing.Point(9, 47);
-            this.Ventas_listBox.Name = "Ventas_listBox";
-            this.Ventas_listBox.Size = new System.Drawing.Size(356, 160);
-            this.Ventas_listBox.TabIndex = 18;
-            // 
-            // EjecutarOperacionVentas_btn
-            // 
-            this.EjecutarOperacionVentas_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EjecutarOperacionVentas_btn.Location = new System.Drawing.Point(289, 17);
-            this.EjecutarOperacionVentas_btn.Name = "EjecutarOperacionVentas_btn";
-            this.EjecutarOperacionVentas_btn.Size = new System.Drawing.Size(76, 25);
-            this.EjecutarOperacionVentas_btn.TabIndex = 13;
-            this.EjecutarOperacionVentas_btn.Text = "Ejecutar";
-            this.EjecutarOperacionVentas_btn.UseVisualStyleBackColor = true;
             // 
             // label29
             // 
@@ -568,6 +569,7 @@
             this.EjecutarGeneral_btn.TabIndex = 19;
             this.EjecutarGeneral_btn.Text = "Ejecutar";
             this.EjecutarGeneral_btn.UseVisualStyleBackColor = true;
+            this.EjecutarGeneral_btn.Click += new System.EventHandler(this.EjecutarGeneral_btn_Click);
             // 
             // Formulario_Principal
             // 

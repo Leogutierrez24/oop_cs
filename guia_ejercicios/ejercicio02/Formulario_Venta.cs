@@ -20,6 +20,7 @@ namespace ejercicio02
             InitializeComponent();
             laEstacion = unaEstacion;
             elSurtidor = unSurtidor;
+            label4.Text = unSurtidor.Nafta;
         }
 
         private void CerrarVenta_btn_Click(object sender, EventArgs e)

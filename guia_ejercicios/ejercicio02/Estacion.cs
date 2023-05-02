@@ -34,7 +34,7 @@ namespace ejercicio02
 
         public List<Venta> Ventas
         {
-            get { return Ventas; }
+            get { return _ventas; }
         }
 
         public void Agregar(Venta unaVenta)

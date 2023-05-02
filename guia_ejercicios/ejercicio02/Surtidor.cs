@@ -9,11 +9,10 @@ namespace ejercicio02
 {
     public class Surtidor
     {
-        private const decimal LIMITE = 100;
-
         private string _nafta;
         private decimal _precio;
         private decimal _cantidad;
+        private int _recargas;
 
         public string Nafta
         {
@@ -38,10 +37,16 @@ namespace ejercicio02
             get { return _cantidad; }
             set
             {
-                if (value <= LIMITE && value >= 0)
-                {
                     _cantidad = value;
-                }
+            }
+        }
+
+        public int Recargas
+        {
+            get { return _recargas; }
+            private set
+            {
+                _recargas = value;
             }
         }
 
@@ -53,14 +58,20 @@ namespace ejercicio02
             } else
             {
                 this._cantidad -= cantDescarga;
-                MessageBox.Show($"Se descargaron {cantDescarga} Litros!");
             }
         }
 
         public void Cargar()
         {
-            this._cantidad = 100;
-            MessageBox.Show("Surtidos cargado!");
+            if (this._cantidad < 100)
+            {
+                this._cantidad = 100;
+                this._recargas++;
+                MessageBox.Show("Surtidos cargado!");
+            } else
+            {
+                MessageBox.Show("El surtidor esta lleno!");
+            }   
         }
     }
 }
