@@ -71,6 +71,21 @@ namespace ejercicio02
             return recaudacion;
         }
 
+        private int ObtenerCantClientes(Surtidor unSurtidor)
+        {
+            int resultado = 0;
+
+            if (estacionServicio.Ventas.Count != 0)
+            {
+                foreach (Venta item in estacionServicio.Ventas)
+                {
+                    if (item.Tipo == unSurtidor.Nafta) resultado++;
+                }
+            }
+
+            return resultado;
+        }
+
         private void ActualizarFormulario() // actualización del formulario con la data de los surtidores
         {
             label2.Text = estacionServicio.Surtidor01.Nafta;
@@ -184,6 +199,88 @@ namespace ejercicio02
             return resultado;
         }
 
+        private string SurtidorMenosVentas()
+        {
+            string resultado;
+            decimal surtidor01 = this.ObtenerRecaudacion(estacionServicio.Surtidor01);
+            decimal surtidor02 = this.ObtenerRecaudacion(estacionServicio.Surtidor02);
+            decimal surtidor03 = this.ObtenerRecaudacion(estacionServicio.Surtidor03);
+
+            if (estacionServicio.Ventas.Count != 0)
+            {
+                if (surtidor01 < surtidor02 && surtidor01 < surtidor03)
+                {
+                    resultado = $"El surtidor con menos ventas: {estacionServicio.Surtidor01.Nafta}{Environment.NewLine}Con ${surtidor01} acumulados";
+                } else if (surtidor02 < surtidor01 && surtidor02 < surtidor03)
+                {
+                    resultado = $"El surtidor con menos ventas: {estacionServicio.Surtidor02.Nafta}{Environment.NewLine}Con ${surtidor02} acumulados";
+                } else if (surtidor03 < surtidor01 && surtidor03 < surtidor02)
+                {
+                    resultado = $"El surtidor con menos ventas: {estacionServicio.Surtidor03.Nafta}{Environment.NewLine}Con ${surtidor03} acumulados";
+                } else
+                {
+                    resultado = $"Todos los surtidores tienen la misma cantidad de ventas acumuladas de ${surtidor01}";
+                }
+            }
+            else
+            {
+                resultado = "No hay ventas registradas";
+            }
+
+            return resultado;
+        }
+
+        private string SurtidorMasClientes()
+        {
+            string resultado;
+            int surtidor01 = this.ObtenerCantClientes(estacionServicio.Surtidor01);
+            int surtidor02 = this.ObtenerCantClientes(estacionServicio.Surtidor02);
+            int surtidor03 = this.ObtenerCantClientes(estacionServicio.Surtidor03);
+            
+            if (surtidor01 > surtidor02 && surtidor01 > surtidor03)
+            {
+                resultado = $"El surtidor con más clientes es el {estacionServicio.Surtidor01.Nafta} con {surtidor01} clientes";
+            } else if (surtidor02 > surtidor01 && surtidor02 > surtidor03)
+            {
+                resultado = $"El surtidor con más clientes es el {estacionServicio.Surtidor02.Nafta} con {surtidor02} clientes";
+            } else if (surtidor03 > surtidor01 && surtidor03 > surtidor02)
+            {
+                resultado = $"El surtidor con más clientes es el {estacionServicio.Surtidor03.Nafta} con {surtidor03} clientes";
+            } else
+            {
+                resultado = $"Todos los surtidores tienen una cantidad de {surtidor01} clientes";
+            }
+
+            return resultado;          
+        }
+
+        private string SurtidorMasRecargas()
+        {
+            string resultado;
+            int surtidor01 = estacionServicio.Surtidor01.Recargas;
+            int surtidor02 = estacionServicio.Surtidor02.Recargas;
+            int surtidor03 = estacionServicio.Surtidor03.Recargas;
+
+            if (surtidor01 > surtidor02 && surtidor01 > surtidor03)
+            {
+                resultado = $"El surtidor con más recargas es el {estacionServicio.Surtidor01.Nafta} con {surtidor01} recargas";
+            }
+            else if (surtidor02 > surtidor01 && surtidor02 > surtidor03)
+            {
+                resultado = $"El surtidor con más recargas es el {estacionServicio.Surtidor02.Nafta} con {surtidor02} recargas";
+            }
+            else if (surtidor03 > surtidor01 && surtidor03 > surtidor02)
+            {
+                resultado = $"El surtidor con más recargas es el {estacionServicio.Surtidor03.Nafta} con {surtidor03} recargas";
+            }
+            else
+            {
+                resultado = $"Todos los surtidores tienen la misma cantidad de recargas";
+            }
+
+            return resultado;
+        }
+
         // Operaciones de surtidores
         private void EjecutarGeneral_btn_Click(object sender, EventArgs e) 
         {
@@ -195,6 +292,12 @@ namespace ejercicio02
                     switch (operacion)
                     {
                         case 0: this.textBox1.Text = this.SurtidorMasVentas();
+                            break;
+                        case 1: this.textBox1.Text = this.SurtidorMenosVentas();
+                            break;
+                        case 2: this.textBox1.Text = this.SurtidorMasClientes();
+                            break;
+                        case 3: this.textBox1.Text = this.SurtidorMasRecargas();
                             break;
                         default: MessageBox.Show("Algo salio mal");
                             break;
@@ -210,9 +313,77 @@ namespace ejercicio02
         }
 
         //Operaciones de ventas
+        private void PorcentajeVentas()
+        {
+            this.Ventas_listBox.Items.Clear();
+
+            int cantVentas = estacionServicio.Ventas.Count();
+            int cantVentas_surtidor01 = this.ObtenerCantClientes(estacionServicio.Surtidor01);
+            int cantVentas_surtidor02 = this.ObtenerCantClientes(estacionServicio.Surtidor02);
+            int cantVentas_surtidor03 = this.ObtenerCantClientes(estacionServicio.Surtidor03);
+
+            float porcentaje_surtidor01 = (cantVentas_surtidor01 * 100) / cantVentas;
+            float porcentaje_surtidor02 = (cantVentas_surtidor02 * 100) / cantVentas;
+            float porcentaje_surtidor03 = (cantVentas_surtidor03 * 100) / cantVentas;
+
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1}%", estacionServicio.Surtidor01.Nafta, porcentaje_surtidor01));
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1}%", estacionServicio.Surtidor02.Nafta, porcentaje_surtidor02));
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1}%", estacionServicio.Surtidor03.Nafta, porcentaje_surtidor03));
+        }
+
+        private void PorcentajeRecaudacion()
+        {
+            this.Ventas_listBox.Items.Clear();
+
+            decimal totalVentas = this.ObtenerRecaudacionTotal();
+            decimal ventas_surtido01 = this.ObtenerRecaudacion(estacionServicio.Surtidor01);
+            decimal ventas_surtido02 = this.ObtenerRecaudacion(estacionServicio.Surtidor02);
+            decimal ventas_surtido03 = this.ObtenerRecaudacion(estacionServicio.Surtidor03);
+
+            decimal porcentaje_surtidor01 = (ventas_surtido01 * 100) / totalVentas;
+            decimal porcentaje_surtidor02 = (ventas_surtido02 * 100) / totalVentas;
+            decimal porcentaje_surtidor03 = (ventas_surtido03 * 100) / totalVentas;
+
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1:0.00}%", estacionServicio.Surtidor01.Nafta, porcentaje_surtidor01));
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1:0.00}%", estacionServicio.Surtidor02.Nafta, porcentaje_surtidor02));
+            this.Ventas_listBox.Items.Add(string.Format("{0}, {1:0.00}%", estacionServicio.Surtidor03.Nafta, porcentaje_surtidor03));
+        }
+
         private void EjecutarOperacionVentas_btn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int operacion = Ventas_comboBox.SelectedIndex;
+                if (operacion != -1)
+                {
+                    switch (operacion)
+                    {
+                        case 0:
+                            this.PorcentajeVentas();
+                            break;
+                        case 1:
+                            this.PorcentajeRecaudacion();
+                            break;
+                        case 2:
+                            MessageBox.Show("まだまだ");
+                            break;
+                        case 3:
+                            MessageBox.Show("まだまだ");
+                            break;
+                        default:
+                            MessageBox.Show("Algo salio mal");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona una de las opciones para operar!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

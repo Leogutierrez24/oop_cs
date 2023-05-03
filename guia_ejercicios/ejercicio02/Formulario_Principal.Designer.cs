@@ -449,8 +449,8 @@
             // 
             this.General_comboBox.FormattingEnabled = true;
             this.General_comboBox.Items.AddRange(new object[] {
-            "SURTIDOR CON MÁS VENTAS",
-            "SURTIDOR CON MENOS VENTAS",
+            "SURTIDOR CON MÁS RECAUDACIÓN",
+            "SURTIDOR CON MENOS RECAUDACIÓN",
             "SURTIDOR CON MÁS CLIENTES",
             "SURTIDOR CON MÁS RECARGAS"});
             this.General_comboBox.Location = new System.Drawing.Point(86, 276);
@@ -522,8 +522,8 @@
             // 
             this.Ventas_comboBox.FormattingEnabled = true;
             this.Ventas_comboBox.Items.AddRange(new object[] {
-            "% POR C/NAFTA",
-            "% DE C/NAFTA VENDIDA",
+            "% VENTAS POR NAFTA",
+            "% RECAUDACIÓN POR NAFTA",
             "% VENDIDO POR SURTIDOR",
             "% RECAUDADO POR SURTIDOR"});
             this.Ventas_comboBox.Location = new System.Drawing.Point(82, 20);
