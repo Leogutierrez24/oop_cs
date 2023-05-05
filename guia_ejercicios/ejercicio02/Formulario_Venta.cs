@@ -34,7 +34,7 @@ namespace ejercicio02
                 {
                     elSurtidor.Descargar(combustible);
                     Venta nuevaVenta = new Venta(elSurtidor.Nafta, combustible, total);
-                    laEstacion.Agregar(nuevaVenta);
+                    laEstacion.AgregarVenta(nuevaVenta);
                     MessageBox.Show("¡Venta Registrada con éxito!");
                     this.Close();
                 } else

@@ -50,6 +50,14 @@ namespace ejercicio02
             }
         }
 
+        public Surtidor(string tipoNafta, decimal precio, decimal cantidad)
+        {
+            this._nafta = tipoNafta;
+            this._precio = precio;
+            this._cantidad = cantidad;
+            this._recargas = 0;
+        }
+
         public void Descargar(decimal cantDescarga)
         {
             if (this._cantidad <= 0 || cantDescarga > this._cantidad)
