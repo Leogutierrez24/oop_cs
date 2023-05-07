@@ -523,9 +523,7 @@
             this.Ventas_comboBox.FormattingEnabled = true;
             this.Ventas_comboBox.Items.AddRange(new object[] {
             "% VENTAS POR NAFTA",
-            "% RECAUDACIÓN POR NAFTA",
-            "% VENDIDO POR SURTIDOR",
-            "% RECAUDADO POR SURTIDOR"});
+            "% RECAUDACIÓN POR NAFTA"});
             this.Ventas_comboBox.Location = new System.Drawing.Point(82, 20);
             this.Ventas_comboBox.Name = "Ventas_comboBox";
             this.Ventas_comboBox.Size = new System.Drawing.Size(195, 21);

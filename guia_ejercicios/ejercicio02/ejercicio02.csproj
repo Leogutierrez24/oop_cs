@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SurtidorConClientes.cs" />
+    <Compile Include="SurtidorConRecaudacion.cs" />
     <Compile Include="Estacion.cs" />
     <Compile Include="Formulario_Principal.cs">
       <SubType>Form</SubType>

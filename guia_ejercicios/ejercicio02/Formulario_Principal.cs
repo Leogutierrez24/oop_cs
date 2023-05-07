@@ -130,9 +130,9 @@ namespace ejercicio02
                 {
                     switch (operacion)
                     {
-                        case 0: this.textBox1.Text = estacionServicio.SurtidorMasVentas();
+                        case 0: this.textBox1.Text = estacionServicio.SurtidorMasRecaudacion();
                             break;
-                        case 1: this.textBox1.Text = estacionServicio.SurtidorMenosVentas();
+                        case 1: this.textBox1.Text = estacionServicio.SurtidorMenosRecaudacion();
                             break;                   
                         case 2: this.textBox1.Text = estacionServicio.SurtidorMasClientes();
                             break;                   

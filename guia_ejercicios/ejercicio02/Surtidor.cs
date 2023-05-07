@@ -50,6 +50,8 @@ namespace ejercicio02
             }
         }
 
+        public Surtidor() { }
+
         public Surtidor(string tipoNafta, decimal precio, decimal cantidad)
         {
             this._nafta = tipoNafta;

@@ -25,27 +25,8 @@ namespace ejercicio02
 
         private void CerrarVenta_btn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                decimal combustible = numericUpDown1.Value;
-                decimal total = combustible * elSurtidor.Precio;
-
-                if (elSurtidor.Cantidad >= combustible)
-                {
-                    elSurtidor.Descargar(combustible);
-                    Venta nuevaVenta = new Venta(elSurtidor.Nafta, combustible, total);
-                    laEstacion.AgregarVenta(nuevaVenta);
-                    MessageBox.Show("¡Venta Registrada con éxito!");
-                    this.Close();
-                } else
-                {
-                    MessageBox.Show("No hay combustible suficiente para completar la venta!!!");
-                    this.numericUpDown1.Focus();
-                }
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            laEstacion.CerrarVenta(elSurtidor, numericUpDown1.Value);
+            this.Close();
         }
 
         private void CancelarVenta_btn_Click(object sender, EventArgs e)
