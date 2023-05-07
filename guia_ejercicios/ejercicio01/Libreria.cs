@@ -7,22 +7,39 @@ namespace ejercicio01
 {
     public class Libreria
     {
-		private List<Venta> _Ventas = new List<Venta>();
+		private float _recaudacion;
+		private List<Venta> _ventas = new List<Venta>();
+
+		public float Recaudacion
+		{
+			get { return this._recaudacion; }
+			set
+			{
+				if (value >= 0) this._recaudacion = value;
+			}
+		}
 
 		public List<Venta> Ventas
 		{
-			get { return _Ventas; }
-			set { _Ventas = value; }
+			get { return _ventas; }
 		}
 
-		public void Agregar(Venta newVenta)
+		public void CerrarVenta(Carrito unCarrito)
 		{
-			_Ventas.Add(newVenta);
+			Venta nuevaVenta = new Venta(unCarrito);
+			this.AgregarVenta(nuevaVenta);
 		}
 
-		public void Eliminar(Venta toDelete)
+		public void AgregarVenta(Venta newVenta)
 		{
-			_Ventas.Remove(toDelete);
+			this._ventas.Add(newVenta);
+			this._recaudacion += newVenta.Total;
+		}
+
+		public void EliminarVenta(Venta toDelete)
+		{
+			this._ventas.Remove(toDelete);
+			this._recaudacion -= toDelete.Total;
 		}
 	}
 }

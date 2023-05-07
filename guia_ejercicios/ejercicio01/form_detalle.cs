@@ -23,7 +23,10 @@ namespace ejercicio01
         {
             try
             {
-                listBox1.DataSource = toShow.Productos;
+                foreach(Producto item in toShow.Productos)
+                {
+                    listBox1.Items.Add(item);
+                }
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

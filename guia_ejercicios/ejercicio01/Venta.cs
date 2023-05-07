@@ -8,22 +8,35 @@ namespace ejercicio01
 {
     public class Venta
     {
-        public Venta()
+        private DateTime _fecha;
+        private float _total;
+        private List<Producto> _productos;
+
+
+        public DateTime Fecha
         {
-            this.Fecha = DateTime.Now;
-            this.Total = 0;
-            this.Productos = new List<Producto>();
+            get {  return _fecha; }
         }
 
-        public DateTime Fecha { get; set; }
+        public List<Producto> Productos {
+            get { return _productos; }
+        }
 
-        public List<Producto> Productos { get; set; }
+        public float Total
+        {
+            get { return _total; }
+        }
 
-        public decimal Total { get; set; }
+        public Venta(Carrito unCarrito)
+        {
+            this._fecha = DateTime.Now;
+            this._total = unCarrito.Subtotal;
+            this._productos = unCarrito.Productos;
+        }
 
         public override string ToString()
         {
-            return $"{this.Fecha.ToShortDateString()} ${this.Total}";
+            return $"{this.Fecha.ToShortDateString()} ${this._total}";
         }
 
     }

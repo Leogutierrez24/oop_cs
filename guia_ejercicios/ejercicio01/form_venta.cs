@@ -14,14 +14,13 @@ namespace ejercicio01
     {
         Libreria newLibreria;
         List<Producto> listaProductos;
-        decimal subtotal;
+        Carrito carritoProductos;
 
         public form_venta(Libreria someLibreria)
         {
             InitializeComponent();
-            listaProductos = new List<Producto>();
-            subtotal = 0;
             newLibreria = someLibreria;
+            carritoProductos = new Carrito();
             ShowProductos();
         }
 
@@ -36,10 +35,10 @@ namespace ejercicio01
         private void ShowProductos()
         {
             listBox1.DataSource = null;
-            listBox1.DataSource = listaProductos;
+            listBox1.DataSource = carritoProductos.Productos;
         }
 
-        private void button2_Click(object sender, EventArgs e) // add Producto
+        private void button2_Click(object sender, EventArgs e) // nuevo producto al carrito
         {
             try
             {
@@ -49,14 +48,13 @@ namespace ejercicio01
                             (int)numericUpDown1.Value,
                             textBox2.Text,
                             textBox1.Text,
-                            numericUpDown2.Value
+                            (float)numericUpDown2.Value
                         );
 
-                    listaProductos.Add(newProducto);
-                    subtotal += newProducto.Precio;
+                    carritoProductos.AgregarProducto(newProducto);                   
 
                     Clear();
-                    label7.Text = subtotal.ToString();
+                    label7.Text = carritoProductos.Subtotal.ToString();
                     ShowProductos();
                 } else
                 {
@@ -68,39 +66,41 @@ namespace ejercicio01
             }
         }
 
-        private void button3_Click(object sender, EventArgs e) // close Sale
+        private void button3_Click(object sender, EventArgs e) // cierre de venta
         {
             try
             {
-                Venta newVenta = new Venta
+                if (carritoProductos.Productos.Count > 0)
                 {
-                    Productos = listaProductos,
-                    Total = subtotal,
-                };
-
-                newLibreria.Agregar(newVenta);
-                this.Close();
+                    newLibreria.CerrarVenta(carritoProductos);
+                    MessageBox.Show("Venta cerrada con éxito!");
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("El carrito esta vacío!!!");
+                }
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void button4_Click(object sender, EventArgs e) // cancel Sale
+        private void button4_Click(object sender, EventArgs e) // cancelar la venta
         {
             this.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e) // delete Producto from Sale
+        private void button5_Click(object sender, EventArgs e) // quitar producto del carrito
         {
             try
             { 
                 if (listBox1.SelectedItem != null)
                 {
                     Producto toDelete = (Producto)listBox1.SelectedItem;
-                    listaProductos.Remove(toDelete);
+                    carritoProductos.EliminarProducto(toDelete);
                     MessageBox.Show($"Se elimino el producto: {toDelete}");
                     ShowProductos();
+                    label7.Text = carritoProductos.Subtotal.ToString();
                 } else
                 {
                     MessageBox.Show("Debe seleccionar un producto para eliminar !!!");

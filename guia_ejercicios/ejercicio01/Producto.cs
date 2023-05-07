@@ -8,18 +8,39 @@ namespace ejercicio01
 {
     public class Producto
     {
-        public Producto(int codigo, string nombre, string descripcion, decimal precio)
+        private int _codigo;
+        private string _nombre;
+        private string _descripcion;
+        private float _precio;
+        
+        public int Codigo
         {
-            this.Codigo = codigo;
-            this.Nombre = nombre;
-            this.Descripcion = descripcion;
-            this.Precio = precio;
+            get { return _codigo; }
         }
 
-        public int Codigo { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
+        public string Nombre 
+        {
+            get { return _nombre; }
+        }
+
+        public string Descripcion 
+        {
+            get { return _descripcion; }
+        }
+
+        public float Precio
+        {
+            get { return _precio; }
+        }
+
+
+        public Producto(int codigo, string nombre, string descripcion, float precio)
+        {
+            this._codigo = codigo;
+            this._nombre = nombre;
+            this._descripcion = descripcion;
+            this._precio = precio;
+        }
 
         public override string ToString()
         {
