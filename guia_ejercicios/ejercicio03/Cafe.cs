@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace ejercicio03
 {
-    public enum TipoCafe
-    {
-        Arabigo = 1,
-        Robusto = 2,
-    }
-
     public class Cafe
     {
-        private TipoCafe _tipo;
+        private string _tipo;
         private float _precio;
-        
-        public TipoCafe Tipo
+        private float _recaudacion;
+        private int _ventas;
+
+        public string Tipo
         {
             get { return _tipo; }
         }
@@ -27,15 +23,28 @@ namespace ejercicio03
             get { return _precio; }
         }
 
-        public Cafe(TipoCafe tipoCafe)
+        public float Recaudacion
         {
-            this._tipo = tipoCafe;
-            this._precio = ((int)tipoCafe == 1) ? 50 : 58;
+            get { return _recaudacion; }
         }
 
-        public void ActualizarPrecio(float nuevoPrecio)
+        public int Ventas
         {
-            this._precio = nuevoPrecio;
+            get { return _ventas; }
+        }
+
+        public Cafe(string tipo, float precio)
+        {
+            this._tipo = tipo;
+            this._precio = precio;
+            this._recaudacion = 0;
+            this._ventas = 0;
+        }
+
+        public void Vender(float precioVenta)
+        {
+            this._recaudacion += precioVenta;
+            this._ventas++;
         }
     }
 }

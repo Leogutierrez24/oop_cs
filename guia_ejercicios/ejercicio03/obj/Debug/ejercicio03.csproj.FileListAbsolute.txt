@@ -1,0 +1,11 @@
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.csproj.AssemblyReference.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.csproj.SuggestedBindingRedirects.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.Frm_Inicio.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.Properties.Resources.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.csproj.GenerateResource.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.csproj.CoreCompileInputs.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\bin\Debug\ejercicio03.exe.config
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\bin\Debug\ejercicio03.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\bin\Debug\ejercicio03.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.pdb
