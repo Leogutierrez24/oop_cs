@@ -9,209 +9,101 @@ namespace ejercicio02
 {
     public class Estacion
     {
-        private List<Surtidor> _surtidores = new List<Surtidor>();
+        private Surtidor _surtidor01 = new Surtidor();
+        private Surtidor _surtidor02 = new Surtidor();
+        private Surtidor _surtidor03 = new Surtidor();
+        private List<Nafta> _naftas = new List<Nafta>();
 
-        public List<Surtidor> Surtidores
+        public Surtidor Surtidor01
         {
-            get { return _surtidores; }
+            get { return _surtidor01; }
+            set { _surtidor01 = value; }
         }
 
-        private List<Venta> _ventas = new List<Venta>();
-
-        public List<Venta> Ventas
+        public Surtidor Surtidor02
         {
-            get { return _ventas; }
+            get { return _surtidor02; }
+            set { _surtidor02 = value; }
         }
 
-        public void AgregarSurtidor(Surtidor nuevoSurtidor)
+        public Surtidor Surtidor03
         {
-            _surtidores.Add(nuevoSurtidor);
+            get { return _surtidor03; }
+            set { _surtidor03 = value; }
         }
 
-        public Surtidor ObtenerSurtidor(int numeroSurtidor)
+        public List<Nafta> Naftas
         {
-            return _surtidores[numeroSurtidor - 1];
+            get { return _naftas; }
         }
 
-        public void CerrarVenta(Surtidor unSurtidor, decimal cantCombustible)
+        public Estacion()
         {
-            decimal total = cantCombustible * unSurtidor.Precio;            
-
-            if (unSurtidor.Cantidad >= cantCombustible)
-            {
-                unSurtidor.Descargar(cantCombustible);
-                Venta nuevaVenta = new Venta(unSurtidor.Nafta, cantCombustible, total);
-                this.AgregarVenta(nuevaVenta);
-                MessageBox.Show("¡Venta Registrada con éxito!");
-            }
-            else
-            {
-                MessageBox.Show("No hay combustible suficiente para completar la venta!!!");
-            }
+            this._naftas = this.GenerarNaftas();
         }
 
-        public void AgregarVenta(Venta unaVenta)
+        public float ObtenerRecaudacionTotal()
         {
-            _ventas.Add(unaVenta);            
-        }
+            float recaudacion = 0;
 
-        public decimal ObtenerRecaudacionSurtidor(Surtidor unSurtidor)
-        {
-            decimal recaudacion = 0;
-
-            if (unSurtidor != null)
-            {
-                if (this._ventas.Count != 0)
-                {
-                    foreach (Venta item in this._ventas)
-                    {
-                        if (item.Tipo == unSurtidor.Nafta) recaudacion += item.Total;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No es posible obtener la recaudación");
-            }
-
-            return recaudacion;
-        }
-
-        public decimal ObtenerRecaudacionTotal()
-        {
-            decimal recaudacion = 0;
-
-            if (this._ventas.Count != 0)
-            {
-                foreach (Venta item in this._ventas)
-                {
-                    recaudacion += item.Total;
-                }
-            }
+            if (this._surtidor01 != null) recaudacion += this._surtidor01.Recaudacion;
+            if (this._surtidor02 != null) recaudacion += this._surtidor02.Recaudacion;
+            if (this._surtidor03 != null) recaudacion += this._surtidor03.Recaudacion;
 
             return recaudacion;
         }
 
         public int ObtenerClientesSurtidor(Surtidor unSurtidor)
         {
-            int resultado = 0;
-
-            if (this._ventas.Count != 0)
-            {
-                foreach (Venta item in this._ventas)
-                {
-                    if (item.Tipo == unSurtidor.Nafta) resultado++;
-                }
-            }
+            int resultado = (unSurtidor.Ventas.Count != 0) ? unSurtidor.Ventas.Count : 0;
 
             return resultado;
         }
 
-        public string SurtidorMasRecaudacion()
+        public Surtidor SurtidorMasRecaudacion()
         {
-            string resultado;
-
-            if (this._ventas.Count != 0)
-            {
-                List<SurtidorConRecaudacion> listaRecaudacion = new List<SurtidorConRecaudacion>();
-                foreach (Surtidor item in this._surtidores)
-                {
-                    SurtidorConRecaudacion conRecaudacion = new SurtidorConRecaudacion(item, this.ObtenerRecaudacionSurtidor(item));
-                    listaRecaudacion.Add(conRecaudacion);
-                }
-
-                SurtidorConRecaudacion surtidorMasVendido = listaRecaudacion.OrderByDescending(i => i.Recaudacion).First();
-
-                resultado = $"El surtidor con más ventas es el {surtidorMasVendido.Nafta}{Environment.NewLine}Con una recaudación de ${surtidorMasVendido.Recaudacion}";
-
-            }
-            else resultado = "¡No se registraron ventas!";
-            
-
+            Surtidor resultado = (this._surtidor01.Recaudacion >= this._surtidor02.Recaudacion) ? this._surtidor01 : this._surtidor02; ;
+            resultado = (resultado.Recaudacion >= this._surtidor03.Recaudacion) ? resultado : this._surtidor03;
             return resultado;
         }
 
-        public string SurtidorMenosRecaudacion()
+        public Surtidor SurtidorMenosRecaudacion()
         {
-            string resultado;
-
-            if (this._ventas.Count != 0)
-            {
-                List<SurtidorConRecaudacion> listaRecaudacion = new List<SurtidorConRecaudacion>();
-                foreach (Surtidor item in this._surtidores)
-                {
-                    SurtidorConRecaudacion conRecaudacion = new SurtidorConRecaudacion(item, this.ObtenerRecaudacionSurtidor(item));
-                    listaRecaudacion.Add(conRecaudacion);
-                }
-
-                SurtidorConRecaudacion surtidorMenosVendido = listaRecaudacion.OrderBy(i => i.Recaudacion).First();
-
-                resultado = $"El surtidor con menos ventas es el {surtidorMenosVendido.Nafta}{Environment.NewLine}Con una recaudación de ${surtidorMenosVendido.Recaudacion}";
-
-            }
-            else resultado = "¡No se registraron ventas!";
-
-
+            Surtidor resultado = (this._surtidor01.Recaudacion <= this._surtidor02.Recaudacion) ? this._surtidor01 : this._surtidor02; ;
+            resultado = (resultado.Recaudacion <= this._surtidor03.Recaudacion) ? resultado : this._surtidor03;
             return resultado;
         }
 
-        public string SurtidorMasClientes()
+        public Surtidor SurtidorMasClientes()
         {
-            string resultado;
-
-            if (this._ventas.Count != 0)
-            {
-                List<SurtidorConClientes> listaClientes = new List<SurtidorConClientes>();
-                foreach (Surtidor item in this._surtidores)
-                {
-                    SurtidorConClientes conRecaudacion = new SurtidorConClientes(item, this.ObtenerClientesSurtidor(item));
-                    listaClientes.Add(conRecaudacion);
-                }
-
-                SurtidorConClientes surtidorMasClientes = listaClientes.OrderByDescending(i => i.Clientes).First();
-
-                resultado = $"El surtidor con más clientes es el {surtidorMasClientes.Nafta}.{Environment.NewLine}Con {surtidorMasClientes.Clientes} clientes.";
-
-            }
-            else resultado = "¡No se registraron ventas!";
-
-
+            Surtidor resultado = (this._surtidor01.Ventas.Count >= this._surtidor02.Ventas.Count) ? this._surtidor01 : this._surtidor02; ;
+            resultado = (resultado.Ventas.Count >= this._surtidor03.Ventas.Count) ? resultado : this._surtidor03;
             return resultado;
         }
 
-        public string SurtidorMasRecargas()
+        public Surtidor SurtidorMasRecargas()
         {
-            string resultado;
-
-            if (this._ventas.Count != 0)
-            {
-                List<Surtidor> listaRecargas = new List<Surtidor>();
-                foreach (Surtidor item in this._surtidores)
-                {
-                    listaRecargas.Add(item);
-                }
-
-                Surtidor surtidorMasRecargas = listaRecargas.OrderByDescending(i => i.Recargas).First();
-
-                resultado = $"El surtidor con más recargas es el {surtidorMasRecargas.Nafta}{Environment.NewLine}.Con {surtidorMasRecargas.Recargas} acumuladas.";
-
-            }
-            else resultado = "¡No se registraron ventas!";
-
-
+            Surtidor resultado = (this._surtidor01.Recargas >= this._surtidor02.Recargas) ? this._surtidor01 : this._surtidor02; ;
+            resultado = (resultado.Recargas >= this._surtidor03.Recargas) ? resultado : this._surtidor03;
             return resultado;
         }
 
         public List<Promedio> PorcentajeVentas()
         {
             List<Promedio> promedios = new List<Promedio>();
-            int ventasTotales = this._ventas.Count();
+            List<Surtidor> surtidores = new List<Surtidor>
+            {
+                this._surtidor01,
+                this._surtidor02,
+                this._surtidor03,
+            };
+            int ventasTotales = this._surtidor01.Ventas.Count + this._surtidor02.Ventas.Count + this._surtidor03.Ventas.Count;
 
-            foreach(Surtidor item in this._surtidores)
+            foreach(Surtidor item in surtidores)
             {
                 int ventasAcumuladas = this.ObtenerClientesSurtidor(item);
                 float porcentaje = (ventasAcumuladas * 100) / ventasTotales;
-                Promedio p = new Promedio(item.Nafta, porcentaje);
+                Promedio p = new Promedio(item.Nafta.Tipo, porcentaje);
                 promedios.Add(p);
             }
 
@@ -221,17 +113,34 @@ namespace ejercicio02
         public List<Promedio> PorcentajeRecaudacion()
         {
             List<Promedio> promedios = new List<Promedio>();
-            decimal recaudacionTotal = this.ObtenerRecaudacionTotal();
-
-            foreach(Surtidor item in this._surtidores)
+            List<Surtidor> surtidores = new List<Surtidor>
             {
-                decimal recaudacion = this.ObtenerRecaudacionSurtidor(item);
-                float porcentaje = ((float)recaudacion * 100) / (float)recaudacionTotal;
-                Promedio p = new Promedio(item.Nafta, porcentaje);
+                this._surtidor01,
+                this._surtidor02,
+                this._surtidor03,
+            };
+            float recaudacionTotal = this.ObtenerRecaudacionTotal();
+
+            foreach(Surtidor item in surtidores)
+            {
+                float recaudacion = item.Recaudacion;
+                float porcentaje = (recaudacion * 100) / recaudacionTotal;
+                Promedio p = new Promedio(item.Nafta.Tipo, porcentaje);
                 promedios.Add(p);
             }
 
             return promedios;
+        }
+
+        private List<Nafta> GenerarNaftas()
+        {
+            Nafta normal = new Nafta("Normal", 17.20f);
+            Nafta super = new Nafta("Super", 18.85f);
+            Nafta premium = new Nafta("Premium", 21.30f);
+
+            List<Nafta> listaNaftas = new List<Nafta> { normal, super, premium };
+
+            return listaNaftas;
         }
     }
 }

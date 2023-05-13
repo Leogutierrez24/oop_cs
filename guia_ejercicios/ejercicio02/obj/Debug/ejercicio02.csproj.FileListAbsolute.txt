@@ -10,3 +10,4 @@ I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.exe
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.pdb
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.Formulario_Venta.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio02\obj\Debug\ejercicio02.Formulario_SetSurtidor.resources

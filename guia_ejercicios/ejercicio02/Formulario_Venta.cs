@@ -12,20 +12,18 @@ namespace ejercicio02
 {
     public partial class Formulario_Venta : Form
     {
-        Estacion laEstacion;
         Surtidor elSurtidor;
 
-        public Formulario_Venta(Estacion unaEstacion, Surtidor unSurtidor)
+        public Formulario_Venta(Surtidor unSurtidor)
         {
             InitializeComponent();
-            laEstacion = unaEstacion;
             elSurtidor = unSurtidor;
-            label4.Text = unSurtidor.Nafta;
+            label4.Text = unSurtidor.Nafta.Tipo;
         }
 
         private void CerrarVenta_btn_Click(object sender, EventArgs e)
         {
-            laEstacion.CerrarVenta(elSurtidor, numericUpDown1.Value);
+            elSurtidor.CerrarVenta((float)numericUpDown1.Value);
             this.Close();
         }
 
@@ -36,7 +34,7 @@ namespace ejercicio02
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            this.label6.Text = $"${numericUpDown1.Value * elSurtidor.Precio}";
+            this.label6.Text = $"${(float)numericUpDown1.Value * elSurtidor.Nafta.Precio}";
         }
     }
 }

@@ -46,8 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SurtidorConClientes.cs" />
-    <Compile Include="SurtidorConRecaudacion.cs" />
+    <Compile Include="Formulario_SetSurtidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario_SetSurtidor.Designer.cs">
+      <DependentUpon>Formulario_SetSurtidor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nafta.cs" />
     <Compile Include="Estacion.cs" />
     <Compile Include="Formulario_Principal.cs">
       <SubType>Form</SubType>
@@ -68,6 +73,9 @@
     <Compile Include="Venta.cs" />
     <EmbeddedResource Include="Formulario_Principal.resx">
       <DependentUpon>Formulario_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario_SetSurtidor.resx">
+      <DependentUpon>Formulario_SetSurtidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulario_Venta.resx">
       <DependentUpon>Formulario_Venta.cs</DependentUpon>

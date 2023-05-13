@@ -9,16 +9,30 @@ namespace ejercicio02
 {
     public class Venta
     {
-        public Venta(string tipo, decimal cantidad, decimal total)
+        private string _nafta;
+        private float _cantidad;
+        private float _total;
+
+        public string Nafta
         {
-            this.Tipo = tipo;
-            this.Cantidad = cantidad;
-            this.Total = total;
+            get { return _nafta; }
         }
 
-        public string Tipo { get; set; }
-        public decimal Cantidad { get; set; }
-        public decimal Total { get; set; }
+        public float Cantidad
+        {
+            get { return _cantidad; }
+        }
 
+        public float Total
+        {
+            get { return _total; }
+        }
+
+        public Venta(string tipoNafta, float cantidad, float total)
+        {
+            this._nafta = tipoNafta;
+            this._cantidad = cantidad;
+            this._total = total;
+        }
     }
 }

@@ -76,6 +76,9 @@
             this.label29 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EjecutarGeneral_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.Surtidor1_groupBox.SuspendLayout();
             this.Surtidor2_groupBox.SuspendLayout();
             this.Surtidor3_groupBox.SuspendLayout();
@@ -100,6 +103,7 @@
             // 
             // Surtidor1_groupBox
             // 
+            this.Surtidor1_groupBox.Controls.Add(this.button1);
             this.Surtidor1_groupBox.Controls.Add(this.label21);
             this.Surtidor1_groupBox.Controls.Add(this.label22);
             this.Surtidor1_groupBox.Controls.Add(this.RecargarSurtidor1_btn);
@@ -205,6 +209,7 @@
             // 
             // Surtidor2_groupBox
             // 
+            this.Surtidor2_groupBox.Controls.Add(this.button2);
             this.Surtidor2_groupBox.Controls.Add(this.label23);
             this.Surtidor2_groupBox.Controls.Add(this.RecargarSurtidor2_btn);
             this.Surtidor2_groupBox.Controls.Add(this.label24);
@@ -326,6 +331,7 @@
             // 
             // Surtidor3_groupBox
             // 
+            this.Surtidor3_groupBox.Controls.Add(this.button3);
             this.Surtidor3_groupBox.Controls.Add(this.label25);
             this.Surtidor3_groupBox.Controls.Add(this.label26);
             this.Surtidor3_groupBox.Controls.Add(this.RecargarSurtidor3_btn);
@@ -569,6 +575,39 @@
             this.EjecutarGeneral_btn.UseVisualStyleBackColor = true;
             this.EjecutarGeneral_btn.Click += new System.EventHandler(this.EjecutarGeneral_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(99, 145);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 28);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Preparar surtidor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Location = new System.Drawing.Point(99, 145);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 28);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Preparar surtidor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Location = new System.Drawing.Point(99, 145);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 28);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Preparar surtidor";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Formulario_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,6 +689,9 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button EjecutarGeneral_btn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

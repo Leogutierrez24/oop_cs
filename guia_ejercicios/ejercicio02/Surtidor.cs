@@ -9,58 +9,47 @@ namespace ejercicio02
 {
     public class Surtidor
     {
-        private string _nafta;
-        private decimal _precio;
-        private decimal _cantidad;
+        private Nafta _nafta;
+        private float _cantidad;
+        private float _recaudacion;
         private int _recargas;
+        private List<Venta> _ventas = new List<Venta>();
 
-        public string Nafta
+        public Nafta Nafta
         {
             get { return _nafta; } 
-            set {  _nafta = value; }
         }
 
-        public decimal Precio
-        {
-            get { return _precio; }
-            set 
-            {
-                if (value > 0)
-                {
-                    _precio = value;
-                }
-            }
-        }
-
-        public decimal Cantidad
+        public float Cantidad
         {
             get { return _cantidad; }
-            set
-            {
-                    _cantidad = value;
-            }
+            set { _cantidad = value; }
+        }
+
+        public float Recaudacion
+        {
+            get { return _recaudacion; }
         }
 
         public int Recargas
         {
             get { return _recargas; }
-            private set
-            {
-                _recargas = value;
-            }
+            private set {_recargas = value; }
         }
 
-        public Surtidor() { }
-
-        public Surtidor(string tipoNafta, decimal precio, decimal cantidad)
+        public List<Venta> Ventas
         {
-            this._nafta = tipoNafta;
-            this._precio = precio;
-            this._cantidad = cantidad;
-            this._recargas = 0;
+            get { return _ventas; }
         }
 
-        public void Descargar(decimal cantDescarga)
+        public Surtidor()
+        {
+            this._cantidad = 0;
+            this._recargas = 0;
+            this._recaudacion = 0;
+        }
+
+        public void Descargar(float cantDescarga)
         {
             if (this._cantidad <= 0 || cantDescarga > this._cantidad)
             {
@@ -68,6 +57,17 @@ namespace ejercicio02
             } else
             {
                 this._cantidad -= cantDescarga;
+            }
+        }
+
+        public void CargaInicial(float totalCarga)
+        {
+            if (totalCarga <= 100 && totalCarga >= 0)
+            {
+                this._cantidad = totalCarga;
+            } else
+            {
+                MessageBox.Show("¡La cantidad de carga a cargar es inválida!");
             }
         }
 
@@ -82,6 +82,33 @@ namespace ejercicio02
             {
                 MessageBox.Show("El surtidor esta lleno!");
             }   
+        }
+
+        public void EstablecerNafta(Nafta unaNafta)
+        {
+            this._nafta = unaNafta;
+        }
+
+        public void CerrarVenta(float cantCombustible)
+        {
+            float total = cantCombustible * this.Nafta.Precio;
+
+            if (this.Cantidad >= cantCombustible)
+            {
+                this.Descargar(cantCombustible);
+
+                Venta nuevaVenta = new Venta(this.Nafta.Tipo, cantCombustible, total);
+                this._ventas.Add(nuevaVenta);
+
+                this._recaudacion += total;
+                this.Nafta.AgregarVenta(total);
+
+                MessageBox.Show("¡Venta Registrada!");
+            }
+            else
+            {
+                MessageBox.Show("¡No hay combustible suficiente para completar la venta!");
+            }
         }
     }
 }
