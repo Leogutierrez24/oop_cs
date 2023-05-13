@@ -88,7 +88,7 @@ namespace ejercicio02
             return resultado;
         }
 
-        public List<Promedio> PorcentajeVentas()
+        public List<Promedio> PorcentajeVentas() // % de ventas por surtidor
         {
             List<Promedio> promedios = new List<Promedio>();
             List<Surtidor> surtidores = new List<Surtidor>
@@ -110,7 +110,7 @@ namespace ejercicio02
             return promedios;
         }
 
-        public List<Promedio> PorcentajeRecaudacion()
+        public List<Promedio> PorcentajeRecaudacion() // % de recaudacion por surtidor
         {
             List<Promedio> promedios = new List<Promedio>();
             List<Surtidor> surtidores = new List<Surtidor>
@@ -126,6 +126,49 @@ namespace ejercicio02
                 float recaudacion = item.Recaudacion;
                 float porcentaje = (recaudacion * 100) / recaudacionTotal;
                 Promedio p = new Promedio(item.Nafta.Tipo, porcentaje);
+                promedios.Add(p);
+            }
+
+            return promedios;
+        }
+
+        public List<Promedio> PorcentajeVentasNafta() // % de venta por nafta
+        {
+            List<Promedio> promedios = new List<Promedio>();
+            int ventasTotales = 0;
+
+            foreach(Nafta item in this._naftas)
+            {
+                ventasTotales += item.Ventas;
+            }
+
+            foreach (Nafta item in this._naftas)
+            {
+                int ventasAcumuladas = item.Ventas;
+                float porcentaje = (ventasAcumuladas * 100) / ventasTotales;
+                Promedio p = new Promedio(item.Tipo, porcentaje);
+                promedios.Add(p);
+            }
+
+            return promedios;
+        }
+
+        public List<Promedio> PorcentajeRecaudacionNafta() // % de recaudacion por nafta
+        {
+            List<Promedio> promedios = new List<Promedio>();
+
+            float recaudacionTotal = 0;
+
+            foreach(Nafta item in this._naftas)
+            {
+                recaudacionTotal += item.Recaudacion;
+            }
+
+            foreach (Nafta item in this._naftas)
+            {
+                float recaudacion = item.Recaudacion;
+                float porcentaje = (recaudacion * 100) / recaudacionTotal;
+                Promedio p = new Promedio(item.Tipo, porcentaje);
                 promedios.Add(p);
             }
 

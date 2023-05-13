@@ -31,6 +31,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.Surtidor1_groupBox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.RecargarSurtidor1_btn = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Surtidor2_groupBox = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.RecargarSurtidor2_btn = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
@@ -53,6 +55,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.Surtidor3_groupBox = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.RecargarSurtidor3_btn = new System.Windows.Forms.Button();
@@ -76,9 +79,6 @@
             this.label29 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.EjecutarGeneral_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.Surtidor1_groupBox.SuspendLayout();
             this.Surtidor2_groupBox.SuspendLayout();
             this.Surtidor3_groupBox.SuspendLayout();
@@ -121,6 +121,17 @@
             this.Surtidor1_groupBox.TabIndex = 2;
             this.Surtidor1_groupBox.TabStop = false;
             this.Surtidor1_groupBox.Text = "Surtido 1";
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(99, 145);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 28);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Preparar surtidor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label21
             // 
@@ -227,6 +238,17 @@
             this.Surtidor2_groupBox.TabIndex = 9;
             this.Surtidor2_groupBox.TabStop = false;
             this.Surtidor2_groupBox.Text = "Surtido 2";
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Location = new System.Drawing.Point(99, 145);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 28);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Preparar surtidor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label23
             // 
@@ -349,6 +371,17 @@
             this.Surtidor3_groupBox.TabIndex = 10;
             this.Surtidor3_groupBox.TabStop = false;
             this.Surtidor3_groupBox.Text = "Surtido 3";
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Location = new System.Drawing.Point(99, 145);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(93, 28);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Preparar surtidor";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label25
             // 
@@ -528,6 +561,8 @@
             // 
             this.Ventas_comboBox.FormattingEnabled = true;
             this.Ventas_comboBox.Items.AddRange(new object[] {
+            "% VENTAS POR SURTIDOR",
+            "% RECAUDACIÓN POR SURTIDOR",
             "% VENTAS POR NAFTA",
             "% RECAUDACIÓN POR NAFTA"});
             this.Ventas_comboBox.Location = new System.Drawing.Point(82, 20);
@@ -574,39 +609,6 @@
             this.EjecutarGeneral_btn.Text = "Ejecutar";
             this.EjecutarGeneral_btn.UseVisualStyleBackColor = true;
             this.EjecutarGeneral_btn.Click += new System.EventHandler(this.EjecutarGeneral_btn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(99, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 28);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Preparar surtidor";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(99, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 28);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Preparar surtidor";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(99, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 28);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Preparar surtidor";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Formulario_Principal
             // 

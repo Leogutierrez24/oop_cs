@@ -80,18 +80,24 @@ namespace ejercicio02
         {
             Ventas_listBox.DataSource = null;
 
-            if (option == 0)
+            switch (option)
             {
-                this.Ventas_listBox.DataSource = estacionServicio.PorcentajeVentas();
-            } else if (option == 1)
-            {
-                this.Ventas_listBox.DataSource = estacionServicio.PorcentajeRecaudacion();
-            } else
-            {
-                MessageBox.Show("Ocurrio un error");
+                case 0:
+                    this.Ventas_listBox.DataSource = estacionServicio.PorcentajeVentas();
+                    break;
+                case 1:
+                    this.Ventas_listBox.DataSource = estacionServicio.PorcentajeRecaudacion();
+                    break;
+                case 2:
+                    this.Ventas_listBox.DataSource = estacionServicio.PorcentajeVentasNafta();
+                    break;
+                case 3:
+                    this.Ventas_listBox.DataSource = estacionServicio.PorcentajeRecaudacionNafta();
+                    break;
+                default:
+                    MessageBox.Show("Algo salio mal");
+                    break;
             }
-
-
         }
 
         // Surtidor 01
@@ -122,9 +128,15 @@ namespace ejercicio02
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor01, estacionServicio);
-            form.ShowDialog();
-            this.ActualizarFormulario();
+            if (estacionServicio.Surtidor01.Nafta == null)
+            {
+                Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor01, estacionServicio);
+                form.ShowDialog();
+                this.ActualizarFormulario();
+            } else
+            {
+                MessageBox.Show("Este surtidor ya tiene una nafta asignada");
+            }
         }
 
         // Surtidor 02
@@ -155,9 +167,15 @@ namespace ejercicio02
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor02, estacionServicio);
-            form.ShowDialog();
-            this.ActualizarFormulario();
+            if (estacionServicio.Surtidor02.Nafta == null)
+            {
+                Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor02, estacionServicio);
+                form.ShowDialog();
+                this.ActualizarFormulario();
+            } else
+            {
+                MessageBox.Show("Este surtidor ya tiene una nafta asignada");
+            }
         }
 
         // Surtidor 03
@@ -188,9 +206,15 @@ namespace ejercicio02
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor03, estacionServicio);
-            form.ShowDialog();
-            this.ActualizarFormulario();
+            if (estacionServicio.Surtidor03.Nafta == null)
+            {
+                Formulario_SetSurtidor form = new Formulario_SetSurtidor(estacionServicio.Surtidor03, estacionServicio);
+                form.ShowDialog();
+                this.ActualizarFormulario();
+            } else
+            {
+                MessageBox.Show("Este surtidor ya tiene una nafta asignada");
+            }
         }
 
         // Operaciones de surtidores
