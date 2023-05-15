@@ -35,8 +35,8 @@ namespace ejercicio03
 
         private List<Cafe> GenerarCafes()
         {
-            Cafe cafe1 = new Cafe("arabigo", 50);
-            Cafe cafe2 = new Cafe("robusto", 58);
+            Cafe cafe1 = new Cafe("Arábigo", 50);
+            Cafe cafe2 = new Cafe("Robusto", 58);
 
             return new List<Cafe> { cafe1, cafe2 };
         }
@@ -50,5 +50,22 @@ namespace ejercicio03
             return new List<Vaso> { vaso1, vaso2, vaso3 };
         }
 
+        public void AgregarCafetera(Cafe unCafe)
+        {
+            Cafetera nuevaCafetera = new Cafetera(unCafe);
+            this._cafeteras.Add(nuevaCafetera);
+        }
+
+        public float CalcularRecaudacion()
+        {
+            float resultado = 0;
+
+            foreach(Cafetera cafetera in this._cafeteras)
+            {
+                resultado += cafetera.Recaudacion;
+            }
+
+            return resultado;
+        }
     }
 }

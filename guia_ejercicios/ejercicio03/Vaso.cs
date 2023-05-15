@@ -26,5 +26,10 @@ namespace ejercicio03
             this._tipo = nombre;
             this._capacidad = (capacidad >= 0) ? capacidad : 0;
         }
+
+        public override string ToString()
+        {
+            return $"{this._tipo} - {this._capacidad}ml";
+        }
     }
 }

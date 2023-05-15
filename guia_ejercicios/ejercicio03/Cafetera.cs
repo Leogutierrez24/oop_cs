@@ -40,9 +40,7 @@ namespace ejercicio03
             get { return _ventas; }
         }
 
-        public Cafetera(){}
-
-        public Cafetera(Cafe tipoCafe, float cantCarga)
+        public Cafetera(Cafe tipoCafe)
         {
             this._cafe = tipoCafe;
         }
@@ -76,6 +74,7 @@ namespace ejercicio03
 
         public void Vender(CafePreparado unCafe)
         {
+            this._recaudacion += unCafe.Precio;
             Venta nuevaVenta = new Venta(unCafe.Precio, unCafe);
             this._ventas.Add(nuevaVenta);
         }

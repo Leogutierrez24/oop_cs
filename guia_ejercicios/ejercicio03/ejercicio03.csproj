@@ -50,6 +50,12 @@
     <Compile Include="CafePreparado.cs" />
     <Compile Include="Cafetera.cs" />
     <Compile Include="Cafeteria.cs" />
+    <Compile Include="Frm_prepararCafe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_prepararCafe.Designer.cs">
+      <DependentUpon>Frm_prepararCafe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_agregarCafetera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vaso.cs" />
     <Compile Include="Venta.cs" />
+    <EmbeddedResource Include="Frm_prepararCafe.resx">
+      <DependentUpon>Frm_prepararCafe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_agregarCafetera.resx">
+      <DependentUpon>Frm_agregarCafetera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Inicio.resx">
       <DependentUpon>Frm_Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

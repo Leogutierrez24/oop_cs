@@ -24,17 +24,17 @@ Los tipos de naftas junto con sus tarifas por litro son:
 •	Súper: $18.85
 •	Premium: $21.30 
 Desarrollar una aplicación Orientada a Objetos utilizando VB.Net o C# que permita:
-1)	Obtener la recaudación total de la estación de servicio.
-2)	Obtener la recaudación total de un surtidor.
-3)	Obtener el surtidor que más recaudó.
-4)	Obtener el surtidor que menos recaudó.
-5)	Obtener el surtidor que más clientes tuvo.
-6)	Calcular el porcentaje de venta de cada tipo de nafta.
-7)	Calcular el porcentaje de recaudación de cada tipo de nafta.
-8)	Recargar el surtidor cuando éste haya quedado vacío.
-9)	Mostrar el surtidor con mayor cantidad recargas.
-10)	Calcular el promedio de ventas por surtidor.
-11)	Calcular el promedio de recaudación por surtidor.
+1)	Obtener la recaudación total de la estación de servicio. 		DONE
+2)	Obtener la recaudación total de un surtidor.				DONE
+3)	Obtener el surtidor que más recaudó. 					DONE
+4)	Obtener el surtidor que menos recaudó. 					DONE
+5)	Obtener el surtidor que más clientes tuvo. 				DONE
+6)	Calcular el porcentaje de venta de cada tipo de nafta.		DONE
+7)	Calcular el porcentaje de recaudación de cada tipo de nafta.	DONE
+8)	Recargar el surtidor cuando éste haya quedado vacío. 			DONE
+9)	Mostrar el surtidor con mayor cantidad recargas. 			DONE
+10)	Calcular el promedio de ventas por surtidor. 				DONE
+11)	Calcular el promedio de recaudación por surtidor. 			DONE
 
 
 EJERCICIO Nº 3

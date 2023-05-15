@@ -46,5 +46,10 @@ namespace ejercicio03
             this._recaudacion += precioVenta;
             this._ventas++;
         }
+
+        public override string ToString()
+        {
+            return $"{this._tipo}";
+        }
     }
 }

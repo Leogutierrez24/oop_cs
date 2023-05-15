@@ -41,7 +41,6 @@
             this.PrepararCafe_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.OperarCafetera_btn = new System.Windows.Forms.Button();
             this.AgregarCafetera_btn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,6 +65,7 @@
             this.Cafeteras_comboBox.Name = "Cafeteras_comboBox";
             this.Cafeteras_comboBox.Size = new System.Drawing.Size(157, 21);
             this.Cafeteras_comboBox.TabIndex = 1;
+            this.Cafeteras_comboBox.SelectedIndexChanged += new System.EventHandler(this.Cafeteras_comboBox_SelectedIndexChanged);
             // 
             // groupBox_cafeteraInfo
             // 
@@ -142,21 +142,25 @@
             // 
             // Recargar_btn
             // 
+            this.Recargar_btn.Enabled = false;
             this.Recargar_btn.Location = new System.Drawing.Point(121, 140);
             this.Recargar_btn.Name = "Recargar_btn";
             this.Recargar_btn.Size = new System.Drawing.Size(75, 40);
             this.Recargar_btn.TabIndex = 3;
             this.Recargar_btn.Text = "Recargar";
             this.Recargar_btn.UseVisualStyleBackColor = true;
+            this.Recargar_btn.Click += new System.EventHandler(this.Recargar_btn_Click);
             // 
             // PrepararCafe_btn
             // 
+            this.PrepararCafe_btn.Enabled = false;
             this.PrepararCafe_btn.Location = new System.Drawing.Point(9, 140);
             this.PrepararCafe_btn.Name = "PrepararCafe_btn";
             this.PrepararCafe_btn.Size = new System.Drawing.Size(75, 40);
             this.PrepararCafe_btn.TabIndex = 2;
             this.PrepararCafe_btn.Text = "Preparar Café";
             this.PrepararCafe_btn.UseVisualStyleBackColor = true;
+            this.PrepararCafe_btn.Click += new System.EventHandler(this.PrepararCafe_btn_Click);
             // 
             // label3
             // 
@@ -176,23 +180,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Cafe:";
             // 
-            // OperarCafetera_btn
-            // 
-            this.OperarCafetera_btn.Location = new System.Drawing.Point(16, 68);
-            this.OperarCafetera_btn.Name = "OperarCafetera_btn";
-            this.OperarCafetera_btn.Size = new System.Drawing.Size(75, 40);
-            this.OperarCafetera_btn.TabIndex = 10;
-            this.OperarCafetera_btn.Text = "Operar Cafetera";
-            this.OperarCafetera_btn.UseVisualStyleBackColor = true;
-            // 
             // AgregarCafetera_btn
             // 
-            this.AgregarCafetera_btn.Location = new System.Drawing.Point(98, 68);
+            this.AgregarCafetera_btn.Location = new System.Drawing.Point(16, 69);
             this.AgregarCafetera_btn.Name = "AgregarCafetera_btn";
             this.AgregarCafetera_btn.Size = new System.Drawing.Size(75, 40);
             this.AgregarCafetera_btn.TabIndex = 11;
             this.AgregarCafetera_btn.Text = "Agregar Cafetera";
             this.AgregarCafetera_btn.UseVisualStyleBackColor = true;
+            this.AgregarCafetera_btn.Click += new System.EventHandler(this.AgregarCafetera_btn_Click);
             // 
             // button5
             // 
@@ -230,12 +226,12 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.AgregarCafetera_btn);
-            this.Controls.Add(this.OperarCafetera_btn);
             this.Controls.Add(this.groupBox_cafeteraInfo);
             this.Controls.Add(this.Cafeteras_comboBox);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Inicio";
             this.Text = "Cafeteria";
+            this.Load += new System.EventHandler(this.Frm_Inicio_Load);
             this.groupBox_cafeteraInfo.ResumeLayout(false);
             this.groupBox_cafeteraInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -258,7 +254,6 @@
         private System.Windows.Forms.Button PrepararCafe_btn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button OperarCafetera_btn;
         private System.Windows.Forms.Button AgregarCafetera_btn;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
