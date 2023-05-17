@@ -32,6 +32,8 @@
             this.Cafes_comboBox = new System.Windows.Forms.ComboBox();
             this.AgregarCafetera_btn = new System.Windows.Forms.Button();
             this.Cancelar_btn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +56,7 @@
             // 
             // AgregarCafetera_btn
             // 
-            this.AgregarCafetera_btn.Location = new System.Drawing.Point(15, 55);
+            this.AgregarCafetera_btn.Location = new System.Drawing.Point(15, 91);
             this.AgregarCafetera_btn.Name = "AgregarCafetera_btn";
             this.AgregarCafetera_btn.Size = new System.Drawing.Size(76, 41);
             this.AgregarCafetera_btn.TabIndex = 2;
@@ -64,7 +66,7 @@
             // 
             // Cancelar_btn
             // 
-            this.Cancelar_btn.Location = new System.Drawing.Point(111, 55);
+            this.Cancelar_btn.Location = new System.Drawing.Point(106, 91);
             this.Cancelar_btn.Name = "Cancelar_btn";
             this.Cancelar_btn.Size = new System.Drawing.Size(76, 41);
             this.Cancelar_btn.TabIndex = 3;
@@ -72,11 +74,29 @@
             this.Cancelar_btn.UseVisualStyleBackColor = true;
             this.Cancelar_btn.Click += new System.EventHandler(this.Cancelar_btn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Etiqueta de identificación:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(150, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(103, 20);
+            this.textBox1.TabIndex = 5;
+            // 
             // Frm_agregarCafetera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 109);
+            this.ClientSize = new System.Drawing.Size(259, 144);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Cancelar_btn);
             this.Controls.Add(this.AgregarCafetera_btn);
             this.Controls.Add(this.Cafes_comboBox);
@@ -95,5 +115,7 @@
         private System.Windows.Forms.ComboBox Cafes_comboBox;
         private System.Windows.Forms.Button AgregarCafetera_btn;
         private System.Windows.Forms.Button Cancelar_btn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

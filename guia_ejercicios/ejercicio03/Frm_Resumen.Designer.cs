@@ -29,16 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cafeMasVendido_lbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cafeMenosVendido_lbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cafeMasRecaudacion_lbl = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cafeRecaudacion_listBox = new System.Windows.Forms.ListBox();
             this.cafeMenosRecaudacion_lbl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cafeVentas_listBox = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cafeMasRecaudacion_lbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cafeMenosVendido_lbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cafeMasVendido_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cafeteraRecaudacion_listBox = new System.Windows.Forms.ListBox();
+            this.cafeteraVentas_listBox = new System.Windows.Forms.ListBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.cafeteraMenosRecaudacion_lbl = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cafeteraMasRecaudacion_lbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -46,14 +54,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.cafeteraMasSirvio_lbl = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cafeteraVentas_listBox = new System.Windows.Forms.ListBox();
-            this.cafeteraRecaudacion_listBox = new System.Windows.Forms.ListBox();
-            this.cafeVentas_listBox = new System.Windows.Forms.ListBox();
-            this.cafeRecaudacion_listBox = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,64 +74,44 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 411);
+            this.groupBox1.Size = new System.Drawing.Size(303, 411);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cafes";
             // 
-            // label1
+            // cafeRecaudacion_listBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cafe más servido:";
+            this.cafeRecaudacion_listBox.FormattingEnabled = true;
+            this.cafeRecaudacion_listBox.Location = new System.Drawing.Point(6, 301);
+            this.cafeRecaudacion_listBox.Name = "cafeRecaudacion_listBox";
+            this.cafeRecaudacion_listBox.Size = new System.Drawing.Size(207, 95);
+            this.cafeRecaudacion_listBox.TabIndex = 14;
             // 
-            // cafeMasVendido_lbl
+            // cafeMenosRecaudacion_lbl
             // 
-            this.cafeMasVendido_lbl.AutoSize = true;
-            this.cafeMasVendido_lbl.Location = new System.Drawing.Point(103, 26);
-            this.cafeMasVendido_lbl.Name = "cafeMasVendido_lbl";
-            this.cafeMasVendido_lbl.Size = new System.Drawing.Size(50, 13);
-            this.cafeMasVendido_lbl.TabIndex = 1;
-            this.cafeMasVendido_lbl.Text = "resultado";
+            this.cafeMenosRecaudacion_lbl.AutoSize = true;
+            this.cafeMenosRecaudacion_lbl.Location = new System.Drawing.Point(161, 109);
+            this.cafeMenosRecaudacion_lbl.Name = "cafeMenosRecaudacion_lbl";
+            this.cafeMenosRecaudacion_lbl.Size = new System.Drawing.Size(50, 13);
+            this.cafeMenosRecaudacion_lbl.TabIndex = 7;
+            this.cafeMenosRecaudacion_lbl.Text = "resultado";
             // 
-            // label3
+            // label17
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Cafe menos servido:";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 150);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(108, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Porcentaje de ventas";
             // 
-            // cafeMenosVendido_lbl
+            // cafeVentas_listBox
             // 
-            this.cafeMenosVendido_lbl.AutoSize = true;
-            this.cafeMenosVendido_lbl.Location = new System.Drawing.Point(115, 54);
-            this.cafeMenosVendido_lbl.Name = "cafeMenosVendido_lbl";
-            this.cafeMenosVendido_lbl.Size = new System.Drawing.Size(50, 13);
-            this.cafeMenosVendido_lbl.TabIndex = 3;
-            this.cafeMenosVendido_lbl.Text = "resultado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Cafe con más recaudación:";
-            // 
-            // cafeMasRecaudacion_lbl
-            // 
-            this.cafeMasRecaudacion_lbl.AutoSize = true;
-            this.cafeMasRecaudacion_lbl.Location = new System.Drawing.Point(149, 82);
-            this.cafeMasRecaudacion_lbl.Name = "cafeMasRecaudacion_lbl";
-            this.cafeMasRecaudacion_lbl.Size = new System.Drawing.Size(50, 13);
-            this.cafeMasRecaudacion_lbl.TabIndex = 5;
-            this.cafeMasRecaudacion_lbl.Text = "resultado";
+            this.cafeVentas_listBox.FormattingEnabled = true;
+            this.cafeVentas_listBox.Location = new System.Drawing.Point(6, 166);
+            this.cafeVentas_listBox.Name = "cafeVentas_listBox";
+            this.cafeVentas_listBox.Size = new System.Drawing.Size(207, 95);
+            this.cafeVentas_listBox.TabIndex = 14;
             // 
             // label7
             // 
@@ -142,14 +122,68 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Cafe con menos recaudación:";
             // 
-            // cafeMenosRecaudacion_lbl
+            // label18
             // 
-            this.cafeMenosRecaudacion_lbl.AutoSize = true;
-            this.cafeMenosRecaudacion_lbl.Location = new System.Drawing.Point(161, 109);
-            this.cafeMenosRecaudacion_lbl.Name = "cafeMenosRecaudacion_lbl";
-            this.cafeMenosRecaudacion_lbl.Size = new System.Drawing.Size(50, 13);
-            this.cafeMenosRecaudacion_lbl.TabIndex = 7;
-            this.cafeMenosRecaudacion_lbl.Text = "resultado";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 285);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(135, 13);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "Porcentaje de recaudación";
+            // 
+            // cafeMasRecaudacion_lbl
+            // 
+            this.cafeMasRecaudacion_lbl.AutoSize = true;
+            this.cafeMasRecaudacion_lbl.Location = new System.Drawing.Point(149, 82);
+            this.cafeMasRecaudacion_lbl.Name = "cafeMasRecaudacion_lbl";
+            this.cafeMasRecaudacion_lbl.Size = new System.Drawing.Size(50, 13);
+            this.cafeMasRecaudacion_lbl.TabIndex = 5;
+            this.cafeMasRecaudacion_lbl.Text = "resultado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Cafe con más recaudación:";
+            // 
+            // cafeMenosVendido_lbl
+            // 
+            this.cafeMenosVendido_lbl.AutoSize = true;
+            this.cafeMenosVendido_lbl.Location = new System.Drawing.Point(115, 54);
+            this.cafeMenosVendido_lbl.Name = "cafeMenosVendido_lbl";
+            this.cafeMenosVendido_lbl.Size = new System.Drawing.Size(50, 13);
+            this.cafeMenosVendido_lbl.TabIndex = 3;
+            this.cafeMenosVendido_lbl.Text = "resultado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Cafe menos servido:";
+            // 
+            // cafeMasVendido_lbl
+            // 
+            this.cafeMasVendido_lbl.AutoSize = true;
+            this.cafeMasVendido_lbl.Location = new System.Drawing.Point(103, 26);
+            this.cafeMasVendido_lbl.Name = "cafeMasVendido_lbl";
+            this.cafeMasVendido_lbl.Size = new System.Drawing.Size(50, 13);
+            this.cafeMasVendido_lbl.TabIndex = 1;
+            this.cafeMasVendido_lbl.Text = "resultado";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cafe más servido:";
             // 
             // groupBox2
             // 
@@ -165,12 +199,37 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.cafeteraMasSirvio_lbl);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(245, 12);
+            this.groupBox2.Location = new System.Drawing.Point(329, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(239, 411);
+            this.groupBox2.Size = new System.Drawing.Size(287, 411);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cafeteras";
+            // 
+            // cafeteraRecaudacion_listBox
+            // 
+            this.cafeteraRecaudacion_listBox.FormattingEnabled = true;
+            this.cafeteraRecaudacion_listBox.Location = new System.Drawing.Point(6, 301);
+            this.cafeteraRecaudacion_listBox.Name = "cafeteraRecaudacion_listBox";
+            this.cafeteraRecaudacion_listBox.Size = new System.Drawing.Size(207, 95);
+            this.cafeteraRecaudacion_listBox.TabIndex = 13;
+            // 
+            // cafeteraVentas_listBox
+            // 
+            this.cafeteraVentas_listBox.FormattingEnabled = true;
+            this.cafeteraVentas_listBox.Location = new System.Drawing.Point(6, 166);
+            this.cafeteraVentas_listBox.Name = "cafeteraVentas_listBox";
+            this.cafeteraVentas_listBox.Size = new System.Drawing.Size(207, 95);
+            this.cafeteraVentas_listBox.TabIndex = 12;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 285);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(135, 13);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Porcentaje de recaudación";
             // 
             // cafeteraMenosRecaudacion_lbl
             // 
@@ -180,6 +239,15 @@
             this.cafeteraMenosRecaudacion_lbl.Size = new System.Drawing.Size(50, 13);
             this.cafeteraMenosRecaudacion_lbl.TabIndex = 7;
             this.cafeteraMenosRecaudacion_lbl.Text = "resultado";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 150);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(108, 13);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Porcentaje de ventas";
             // 
             // label10
             // 
@@ -244,83 +312,16 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Cafetera que más servió:";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 150);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Porcentaje de ventas";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 285);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(135, 13);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Porcentaje de recaudación";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 285);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(135, 13);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "Porcentaje de recaudación";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 150);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(108, 13);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Porcentaje de ventas";
-            // 
-            // cafeteraVentas_listBox
-            // 
-            this.cafeteraVentas_listBox.FormattingEnabled = true;
-            this.cafeteraVentas_listBox.Location = new System.Drawing.Point(6, 166);
-            this.cafeteraVentas_listBox.Name = "cafeteraVentas_listBox";
-            this.cafeteraVentas_listBox.Size = new System.Drawing.Size(207, 95);
-            this.cafeteraVentas_listBox.TabIndex = 12;
-            // 
-            // cafeteraRecaudacion_listBox
-            // 
-            this.cafeteraRecaudacion_listBox.FormattingEnabled = true;
-            this.cafeteraRecaudacion_listBox.Location = new System.Drawing.Point(6, 301);
-            this.cafeteraRecaudacion_listBox.Name = "cafeteraRecaudacion_listBox";
-            this.cafeteraRecaudacion_listBox.Size = new System.Drawing.Size(207, 95);
-            this.cafeteraRecaudacion_listBox.TabIndex = 13;
-            // 
-            // cafeVentas_listBox
-            // 
-            this.cafeVentas_listBox.FormattingEnabled = true;
-            this.cafeVentas_listBox.Location = new System.Drawing.Point(6, 166);
-            this.cafeVentas_listBox.Name = "cafeVentas_listBox";
-            this.cafeVentas_listBox.Size = new System.Drawing.Size(207, 95);
-            this.cafeVentas_listBox.TabIndex = 14;
-            // 
-            // cafeRecaudacion_listBox
-            // 
-            this.cafeRecaudacion_listBox.FormattingEnabled = true;
-            this.cafeRecaudacion_listBox.Location = new System.Drawing.Point(6, 301);
-            this.cafeRecaudacion_listBox.Name = "cafeRecaudacion_listBox";
-            this.cafeRecaudacion_listBox.Size = new System.Drawing.Size(207, 95);
-            this.cafeRecaudacion_listBox.TabIndex = 14;
-            // 
             // Frm_Resumen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 435);
+            this.ClientSize = new System.Drawing.Size(628, 435);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Frm_Resumen";
             this.Text = "Resumen";
+            this.Load += new System.EventHandler(this.Frm_Resumen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

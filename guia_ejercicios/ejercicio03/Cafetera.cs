@@ -14,6 +14,7 @@ namespace ejercicio03
         private int _recargas = 0;
         private float _recaudacion = 0;
         private List<Venta> _ventas = new List<Venta>();
+        private string _id;
 
         public Cafe Cafe
         {
@@ -40,9 +41,15 @@ namespace ejercicio03
             get { return _ventas; }
         }
 
-        public Cafetera(Cafe tipoCafe)
+        public string Id
+        {
+            get { return _id; }
+        }
+
+        public Cafetera(Cafe tipoCafe, string id)
         {
             this._cafe = tipoCafe;
+            this._id = id;
         }
 
         public void Cargar()
@@ -81,7 +88,7 @@ namespace ejercicio03
 
         public override string ToString()
         {
-            return $"Cafetera de {this._cafe.Tipo}";
+            return $"Cafetera {this._id}";
         }
     }
 }

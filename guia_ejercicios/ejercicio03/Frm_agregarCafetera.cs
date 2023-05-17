@@ -35,10 +35,10 @@ namespace ejercicio03
 
         private void AgregarCafetera_btn_Click(object sender, EventArgs e)
         {
-            if (Cafes_comboBox.SelectedIndex != -1)
+            if (Cafes_comboBox.SelectedIndex != -1 && !String.IsNullOrEmpty(textBox1.Text))
             {
                 Cafe cafeElegido = Cafes_comboBox.SelectedItem as Cafe;
-                this.cafeteria.AgregarCafetera(cafeElegido);
+                this.cafeteria.AgregarCafetera(cafeElegido, textBox1.Text);
                 MessageBox.Show("Se agrego una nueva cafetera con: " + cafeElegido.ToString());
                 this.Close();
             } else

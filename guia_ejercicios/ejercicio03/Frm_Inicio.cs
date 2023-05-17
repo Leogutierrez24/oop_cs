@@ -94,5 +94,18 @@ namespace ejercicio03
                 this.ActualizarInfoCafetera();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (cafeteria.Cafeteras.Count != 0)
+            {
+                Frm_Resumen form = new Frm_Resumen(this.cafeteria);
+                form.ShowDialog();
+            } else
+            {
+                MessageBox.Show("¡No hay cafeteras para resumir operaciones!");
+            }
+            
+        }
     }
 }

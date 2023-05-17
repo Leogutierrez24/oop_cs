@@ -11,3 +11,4 @@ I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.pdb
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.Frm_agregarCafetera.resources
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.Frm_prepararCafe.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio03\obj\Debug\ejercicio03.Frm_Resumen.resources

@@ -49,8 +49,8 @@ El café se puede servir en diferentes vasos:
 •	Vaso Grande ¼ litro.
 
 Desarrollar una aplicación orientada a objetos utilizando VB.Net o C# que permita:
-1)	Obtener la recaudación total del negocio.
-2)	Obtener la recaudación por máquina de café.
+1)	Obtener la recaudación total del negocio. 				DONE
+2)	Obtener la recaudación por máquina de café.				DONE
 3)	Mostrar la máquina que más café sirvió.
 4)	Mostrar la máquina que menos café sirvió.
 5)	Mostrar la máquina que más dinero recaudó.
