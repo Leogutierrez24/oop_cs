@@ -47,5 +47,10 @@ namespace ejercicio04
             this._recaudacion += total;
             this._ventas++;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} ${1:0.00}", this._tipo, this._precio);
+        }
     }
 }

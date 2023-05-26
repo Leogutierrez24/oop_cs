@@ -1,0 +1,13 @@
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\bin\Debug\ejercicio04.exe.config
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\bin\Debug\ejercicio04.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\bin\Debug\ejercicio04.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.csproj.AssemblyReference.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.csproj.SuggestedBindingRedirects.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.frm_agregarBarril.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.frm_Home.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.frm_servirCerveza.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.Properties.Resources.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.csproj.GenerateResource.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.csproj.CoreCompileInputs.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.pdb
