@@ -51,7 +51,7 @@ namespace ejercicio04
                 {
                     Cerveza cervezaElegida = cervezas_comboBox.SelectedItem as Cerveza;
 
-                    Barril nuevoBarril = new Barril((int)id_numericUpDown.Value, cervezaElegida, (int)capacidad_numericUpDown.Value);
+                    Barril nuevoBarril = new Barril((int)id_numericUpDown.Value, cervezaElegida, (float)capacidad_numericUpDown.Value);
                     afterOffice.AgregarBarril(nuevoBarril);
                     this.Close();
                 } else

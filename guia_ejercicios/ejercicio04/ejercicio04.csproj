@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vaso.cs" />
     <Compile Include="VasoConCerveza.cs" />
+    <Compile Include="Venta.cs" />
     <EmbeddedResource Include="frm_agregarBarril.resx">
       <DependentUpon>frm_agregarBarril.cs</DependentUpon>
     </EmbeddedResource>

@@ -39,6 +39,7 @@
             this.resumen_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.recaudacion_lbl = new System.Windows.Forms.Label();
+            this.quitarBarril_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +115,7 @@
             // 
             // resumen_btn
             // 
-            this.resumen_btn.Location = new System.Drawing.Point(184, 126);
+            this.resumen_btn.Location = new System.Drawing.Point(270, 126);
             this.resumen_btn.Name = "resumen_btn";
             this.resumen_btn.Size = new System.Drawing.Size(80, 47);
             this.resumen_btn.TabIndex = 12;
@@ -125,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(270, 143);
+            this.label4.Location = new System.Drawing.Point(356, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 13;
@@ -134,17 +135,28 @@
             // recaudacion_lbl
             // 
             this.recaudacion_lbl.AutoSize = true;
-            this.recaudacion_lbl.Location = new System.Drawing.Point(373, 143);
+            this.recaudacion_lbl.Location = new System.Drawing.Point(459, 143);
             this.recaudacion_lbl.Name = "recaudacion_lbl";
             this.recaudacion_lbl.Size = new System.Drawing.Size(98, 13);
             this.recaudacion_lbl.TabIndex = 14;
             this.recaudacion_lbl.Text = "recaudacion_value";
+            // 
+            // quitarBarril_btn
+            // 
+            this.quitarBarril_btn.Location = new System.Drawing.Point(184, 126);
+            this.quitarBarril_btn.Name = "quitarBarril_btn";
+            this.quitarBarril_btn.Size = new System.Drawing.Size(80, 47);
+            this.quitarBarril_btn.TabIndex = 15;
+            this.quitarBarril_btn.Text = "Quitar barril";
+            this.quitarBarril_btn.UseVisualStyleBackColor = true;
+            this.quitarBarril_btn.Click += new System.EventHandler(this.quitarBarril_btn_Click);
             // 
             // frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(641, 185);
+            this.Controls.Add(this.quitarBarril_btn);
             this.Controls.Add(this.recaudacion_lbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.resumen_btn);
@@ -175,6 +187,7 @@
         private System.Windows.Forms.Button resumen_btn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label recaudacion_lbl;
+        private System.Windows.Forms.Button quitarBarril_btn;
     }
 }
 

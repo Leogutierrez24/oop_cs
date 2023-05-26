@@ -11,6 +11,7 @@ namespace ejercicio04
         private List<Cerveza> _cervezas;
         private List<Vaso> _vasos;
         private List<Barril> _barriles = new List<Barril>();
+        private List<Venta> _ventas = new List<Venta>();
         private float _recaudacion;
 
         public List<Cerveza> Cervezas
@@ -28,6 +29,8 @@ namespace ejercicio04
             get { return _barriles; }
         }
 
+        public List<Venta> Ventas { get { return _ventas; } }
+
         public float Recaudacion
         {
             get { return _recaudacion; }
@@ -39,6 +42,7 @@ namespace ejercicio04
             this._vasos = this.VasosIniciales();
         }
 
+        // métodos para inicializar el ejercicio con valores predeterminados
         private List<Cerveza> CervezasIniciales()
         {
             Cerveza rubiaNacional = new Cerveza("Rubia Nacional", 50);
@@ -55,6 +59,7 @@ namespace ejercicio04
             return new List<Vaso> {  chopp, vaso, jarra };
         }
 
+        // operaciones de barriles
         public void AgregarBarril(Barril nuevoBarril)
         {
             this._barriles.Add(nuevoBarril);
@@ -63,6 +68,24 @@ namespace ejercicio04
         public void EliminarBarril(Barril unBarril)
         {
             this._barriles.Remove(unBarril);
+        }
+
+        public List<Barril> FiltrarBarriles(Cerveza cerveza)
+        {
+            List<Barril> barrilesFiltrados = this._barriles.FindAll(barril => barril.Cerveza == cerveza);
+            return barrilesFiltrados;
+        }
+
+        public float CalcularPrecio(Cerveza cerveza, Vaso vaso)
+        {
+            return (cerveza.Precio * vaso.Cantidad) * 1.05f;
+        }
+
+        // operaciones de ventas
+        public void AgregarVenta(Venta nuevaVenta)
+        {
+            this._ventas.Add(nuevaVenta);
+            this._recaudacion += nuevaVenta.Total;
         }
     }
 }

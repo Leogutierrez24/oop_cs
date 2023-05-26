@@ -39,7 +39,7 @@
             this.servir_btn = new System.Windows.Forms.Button();
             this.cancelar_btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.cantidad_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -59,6 +59,7 @@
             this.cervezas_comboBox.Name = "cervezas_comboBox";
             this.cervezas_comboBox.Size = new System.Drawing.Size(158, 21);
             this.cervezas_comboBox.TabIndex = 1;
+            this.cervezas_comboBox.SelectedIndexChanged += new System.EventHandler(this.cervezas_comboBox_SelectedIndexChanged);
             // 
             // barriles_comboBox
             // 
@@ -68,6 +69,7 @@
             this.barriles_comboBox.Name = "barriles_comboBox";
             this.barriles_comboBox.Size = new System.Drawing.Size(158, 21);
             this.barriles_comboBox.TabIndex = 3;
+            this.barriles_comboBox.SelectedIndexChanged += new System.EventHandler(this.barriles_comboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -86,6 +88,7 @@
             this.vasos_comboBox.Name = "vasos_comboBox";
             this.vasos_comboBox.Size = new System.Drawing.Size(158, 21);
             this.vasos_comboBox.TabIndex = 5;
+            this.vasos_comboBox.SelectedIndexChanged += new System.EventHandler(this.vasos_comboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -116,12 +119,14 @@
             // 
             // servir_btn
             // 
+            this.servir_btn.Enabled = false;
             this.servir_btn.Location = new System.Drawing.Point(15, 224);
             this.servir_btn.Name = "servir_btn";
             this.servir_btn.Size = new System.Drawing.Size(82, 30);
             this.servir_btn.TabIndex = 8;
             this.servir_btn.Text = "Servir";
             this.servir_btn.UseVisualStyleBackColor = true;
+            this.servir_btn.Click += new System.EventHandler(this.servir_btn_Click);
             // 
             // cancelar_btn
             // 
@@ -131,6 +136,7 @@
             this.cancelar_btn.TabIndex = 9;
             this.cancelar_btn.Text = "Cancelar";
             this.cancelar_btn.UseVisualStyleBackColor = true;
+            this.cancelar_btn.Click += new System.EventHandler(this.cancelar_btn_Click);
             // 
             // label5
             // 
@@ -141,21 +147,21 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Cant. disponible:";
             // 
-            // label6
+            // cantidad_lbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(103, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "cantidad_value";
+            this.cantidad_lbl.AutoSize = true;
+            this.cantidad_lbl.Location = new System.Drawing.Point(103, 108);
+            this.cantidad_lbl.Name = "cantidad_lbl";
+            this.cantidad_lbl.Size = new System.Drawing.Size(80, 13);
+            this.cantidad_lbl.TabIndex = 11;
+            this.cantidad_lbl.Text = "cantidad_value";
             // 
             // frm_servirCerveza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(238, 266);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cantidad_lbl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cancelar_btn);
             this.Controls.Add(this.servir_btn);
@@ -187,6 +193,6 @@
         private System.Windows.Forms.Button servir_btn;
         private System.Windows.Forms.Button cancelar_btn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label cantidad_lbl;
     }
 }

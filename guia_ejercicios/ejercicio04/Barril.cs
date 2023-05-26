@@ -46,11 +46,12 @@ namespace ejercicio04
             get { return _ventas; }
         }
 
-        public Barril(int id, Cerveza cerveza, int capacidad)
+        public Barril(int id, Cerveza cerveza, float capacidad)
         {
             this._id = id;
             this._cerveza = cerveza;
             this._capacidad = capacidad;
+            this._cantidad = capacidad;
             this._recaudacion = 0;
             this._ventas = 0;
         }

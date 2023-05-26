@@ -36,7 +36,7 @@ namespace ejercicio04
 
         public override string ToString()
         {
-            return string.Format("{0}, ${1:0.00}", this._vaso, this._precio);
+            return string.Format("{0} con {1} ${2:0.00}", this._vaso, this._cerveza,this._precio);
         }
     }
 }

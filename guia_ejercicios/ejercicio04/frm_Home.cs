@@ -77,9 +77,31 @@ namespace ejercicio04
             this.ActualizarFrm();
         }
 
+        private void quitarBarril_btn_Click(object sender, EventArgs e)
+        {
+            if (afterOffice.Barriles.Count != 0)
+            {
+                if (barriles_listBox.SelectedItems.Count == 1)
+                {
+                    Barril barrilToDelete = barriles_listBox.SelectedItem as Barril;
+                    afterOffice.EliminarBarril(barrilToDelete);
+                    MessageBox.Show("Se elimino el barril con identificador: " + barrilToDelete.Id);
+                    this.ActualizarFrm();
+                }
+                else
+                {
+                    MessageBox.Show("Se necesita elegir un barril para continuar");
+                }
+            } else
+            {
+                MessageBox.Show("No hay barriles para quitar");
+            }
+        }
+
         private void resumen_btn_Click(object sender, EventArgs e)
         {
             
         }
+
     }
 }
