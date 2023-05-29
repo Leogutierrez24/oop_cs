@@ -1,0 +1,11 @@
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\bin\Debug\ejercicio05.exe.config
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\bin\Debug\ejercicio05.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\bin\Debug\ejercicio05.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.csproj.AssemblyReference.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.csproj.SuggestedBindingRedirects.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.Form1.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.Properties.Resources.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.csproj.GenerateResource.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.csproj.CoreCompileInputs.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.pdb
