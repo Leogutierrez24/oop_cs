@@ -56,9 +56,9 @@ namespace ejercicio04
             this._ventas = 0;
         }
 
-        public void AgregarVenta(float total)
+        public void AgregarVenta(float total, float litrosVendidos)
         {
-            this._cerveza.AgregarVenta(total);
+            this._cerveza.AgregarVenta(total, litrosVendidos);
             this._recaudacion += total;
             this._ventas++;
         }
@@ -77,7 +77,7 @@ namespace ejercicio04
                 vaso.Solicitar();
                 this.Descargar(vaso.Cantidad);
                 vasoConBirra = new VasoConCerveza(vaso, this._cerveza);
-                this.AgregarVenta(vasoConBirra.Precio);
+                this.AgregarVenta(vasoConBirra.Precio, vaso.Cantidad);
             }
             
             return vasoConBirra;
@@ -85,7 +85,7 @@ namespace ejercicio04
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", this._id, this._cerveza, (this._cantidad == 0) ? "Vacío" : this._cantidad.ToString());
+            return string.Format("{0} {1} {2}", this._id, this._cerveza.Tipo, (this._cantidad == 0) ? "Vacío" : this._cantidad.ToString());
         }
     }
 }

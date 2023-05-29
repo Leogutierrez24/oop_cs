@@ -13,6 +13,7 @@ namespace ejercicio04
         private float _precio; // precio por litro
         private float _recaudacion;
         private int _ventas;
+        private float _cantidadVendida = 0;
 
         public string Tipo
         {
@@ -34,6 +35,11 @@ namespace ejercicio04
             get { return _ventas; }
         }
 
+        public float CantidadVendida
+        {
+            get { return _cantidadVendida; }
+        }
+
         public Cerveza(string tipo, float precio)
         {
             this._tipo = tipo;
@@ -42,9 +48,10 @@ namespace ejercicio04
             this._ventas = 0;
         }
 
-        public void AgregarVenta(float total)
+        public void AgregarVenta(float total, float litrosVendidos)
         {
             this._recaudacion += total;
+            this._cantidadVendida += litrosVendidos;
             this._ventas++;
         }
 

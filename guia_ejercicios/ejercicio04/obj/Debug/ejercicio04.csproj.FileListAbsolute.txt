@@ -11,3 +11,4 @@ I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.csproj.CoreCompileInputs.cache
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.exe
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio04\obj\Debug\ejercicio04.frm_Resumen.resources

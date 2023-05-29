@@ -73,6 +73,9 @@ namespace ejercicio04
             {
                 total_lbl.Text = string.Format("${0:0.00}", this.afterOffice.CalcularPrecio(this.cervezaElegida, this.vasoElegido));
                 servir_btn.Enabled = true;
+            } else
+            {
+                total_lbl.Text = "$000,00";
             }
         }
 
@@ -110,6 +113,7 @@ namespace ejercicio04
 
             if (cervezaElegida != null)
             {
+                this.barrilElegido = null;
                 List<Barril> barrilesFiltrados = this.afterOffice.FiltrarBarriles(cervezaElegida);
                 barriles_comboBox.Items.Clear();
 
