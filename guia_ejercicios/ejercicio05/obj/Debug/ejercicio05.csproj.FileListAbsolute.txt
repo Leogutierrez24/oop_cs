@@ -9,3 +9,4 @@ I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.csproj.CoreCompileInputs.cache
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.exe
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio05\obj\Debug\ejercicio05.Frm_registrarJuez.resources

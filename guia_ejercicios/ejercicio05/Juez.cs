@@ -13,7 +13,7 @@ namespace ejercicio05
         private string _apellido;
         private float _recaudacion = 0;
         private int _partidos = 0;
-        private bool _estado = true;
+        private bool _estado = true; // true = disponible - false = no disponible
 
         public int Legajo
         {
@@ -69,6 +69,11 @@ namespace ejercicio05
             this.CambiarEstado();
             this._recaudacion -= pago;
             this._partidos--;
+        }
+
+        public override string ToString()
+        {
+            return $"{this._legajo} {this._nombre} {this._apellido}";
         }
     }
 }
