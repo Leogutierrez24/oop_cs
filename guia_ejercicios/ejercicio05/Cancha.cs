@@ -11,10 +11,9 @@ namespace ejercicio05
         private int _id;
         private string _tipo;
         private float _precio; // Precio por Hora
-        private List<string> _opciones = new List<string>();
+        private List<Opcion> _opciones = new List<Opcion>();
         private float _recaudacion = 0;
         private int _alquileres = 0;
-        private bool _estado = true;
 
         public int Id
         {
@@ -31,7 +30,7 @@ namespace ejercicio05
             get { return _precio; }
         }
 
-        public List<string> Opciones
+        public List<Opcion> Opciones
         {
             get { return _opciones; }
         }
@@ -46,11 +45,6 @@ namespace ejercicio05
             get { return _alquileres; }
         }
 
-        public bool Estado
-        {
-            get { return _estado; }
-        }
-
         public Cancha(int id, string tipo, float precio)
         {
             this._id = id;
@@ -58,7 +52,7 @@ namespace ejercicio05
             this._precio = precio;
         }
 
-        public Cancha(int id, string tipo, float precio, List<string> opciones)
+        public Cancha(int id, string tipo, float precio, List<Opcion> opciones)
         {
             this._id = id;
             this._tipo = tipo;
@@ -66,23 +60,21 @@ namespace ejercicio05
             this._opciones = opciones;
         }
 
-        public void CambiarEstado()
-        {
-            this._estado = !this._estado;
-        }
-
         public void AsignarAlquiler(float costo)
         {
-            this.CambiarEstado();
             this._recaudacion += costo;
             this._alquileres++;
         }
 
         public void CancelarAlquiler(float costo)
         {
-            this.CambiarEstado();
             this._recaudacion -= costo;
             this._alquileres--;
+        }
+
+        public override string ToString()
+        {
+            return $"{this._id} {this._tipo} ${this._precio}";
         }
     }
 }

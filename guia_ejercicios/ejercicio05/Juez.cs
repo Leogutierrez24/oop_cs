@@ -13,7 +13,6 @@ namespace ejercicio05
         private string _apellido;
         private float _recaudacion = 0;
         private int _partidos = 0;
-        private bool _estado = true; // true = disponible - false = no disponible
 
         public int Legajo
         {
@@ -40,11 +39,6 @@ namespace ejercicio05
             get { return _partidos; }
         }
 
-        public bool Estado
-        {
-            get { return _estado; }
-        }
-
         public Juez(int legajo, string nombre, string apellido)
         {
             this._legajo = legajo;
@@ -52,21 +46,14 @@ namespace ejercicio05
             this._apellido = apellido;
         }
 
-        public void CambiarEstado()
-        {
-            this._estado = !this._estado;
-        }
-
         public void AsignarPartido(float pago)
         {
-            this.CambiarEstado();
             this._recaudacion += pago;
             this._partidos++;
         }
 
         public void CancelarPartido(float pago)
         {
-            this.CambiarEstado();
             this._recaudacion -= pago;
             this._partidos--;
         }

@@ -33,12 +33,44 @@ namespace ejercicio05
             get { return _recaudacion; }
         }
 
+        public Polideportivo()
+        {
+            this.InicializarCanchas();
+        }
+
+        private void InicializarCanchas()
+        {
+            Opcion opcional01 = new Opcion
+                (
+                    1,
+                    100,
+                    50,
+                    "Agregar 1 juez, adiciona $100 al valor de la cancha."
+                );
+            Opcion opcional02 = new Opcion
+                (
+                    2,
+                    90,
+                    35,
+                    "Agregar 2 jueces de línea, incrementando $90 al costo total.",
+                    true
+                );
+
+            Cancha tenis = new Cancha(1, "Tenis", 200, new List<Opcion>{ opcional01 });
+            Cancha futbol5 = new Cancha(2, "Fútbol 5", 500);
+            Cancha futbol7 = new Cancha(3, "Fútbol 7", 650, new List<Opcion>{ opcional01 });
+            Cancha futbol11 = new Cancha(4, "Fútbol 11", 800, new List<Opcion>{ opcional01, opcional02 });
+
+            this._canchas = new List<Cancha> { tenis, futbol5, futbol7, futbol11 };
+        }
+
 
         // Operaciones de canchas
 
         public bool ComprobarID(Cancha unaCancha)
         {
-            return true;
+            Cancha busqueda = this._canchas.Find(cancha => cancha.Id == unaCancha.Id);
+            return busqueda == null;
         }
 
         public void AgregarCancha(Cancha nuevaCancha)
@@ -69,6 +101,18 @@ namespace ejercicio05
         public void GenerarAlquiler()
         {
 
+        }
+
+        public List<Alquiler> FiltarAlquileres(DateTime fecha)
+        {
+            List<Alquiler> alquileresFiltrados = new List<Alquiler>();
+
+            foreach(Alquiler alquiler in this._alquileres)
+            {
+                if (alquiler.Fecha == fecha) alquileresFiltrados.Add(alquiler);
+            }
+
+            return alquileresFiltrados;
         }
 
 

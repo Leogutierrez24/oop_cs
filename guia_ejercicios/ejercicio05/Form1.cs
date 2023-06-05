@@ -20,7 +20,8 @@ namespace ejercicio05
             this.poli = new Polideportivo();
         }
 
-        private void ActualizarForm()
+        // información del formulario
+        private void ActualizarJuecezInfo()
         {
             jueces_listBox.Items.Clear();
             if (this.poli.Jueces.Count != 0)
@@ -29,10 +30,33 @@ namespace ejercicio05
                 {
                     jueces_listBox.Items.Add(juez);
                 }
-            } else
+            }
+            else
             {
                 jueces_listBox.Items.Add("No hay jueces.");
             }
+        }
+
+        private void ActualizarCanchasInfo()
+        {
+            canchas_listBox.Items.Clear();
+            if (this.poli.Canchas.Count != 0)
+            {
+                foreach (Cancha cancha in this.poli.Canchas)
+                {
+                    canchas_listBox.Items.Add(cancha);
+                }
+            }
+            else
+            {
+                canchas_listBox.Items.Add("No hay canchas.");
+            }
+        }
+
+        private void ActualizarForm()
+        {
+            this.ActualizarJuecezInfo();
+            this.ActualizarCanchasInfo();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,6 +82,41 @@ namespace ejercicio05
             {
                 MessageBox.Show("Debe seleccionar al juez que desea eliminar");
             }
+        }
+
+        // manejo de canchas
+        private void VerCancha_btn_Click(object sender, EventArgs e)
+        {
+            if (canchas_listBox.SelectedItems.Count == 1)
+            {
+                if ((Cancha)canchas_listBox.SelectedItem != null)
+                {
+                    Frm_verCancha form = new Frm_verCancha(canchas_listBox.SelectedItem as Cancha);
+                    form.ShowDialog();
+                }
+            } else
+            {
+                MessageBox.Show("Elige una cancha para poder continuar");
+            }
+            
+        }
+
+        // manejo de alquileres
+        private void VerAlquiler_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuevoAlquiler_btn_Click(object sender, EventArgs e)
+        {
+            Frm_nuevoAlquiler form = new Frm_nuevoAlquiler(this.poli);
+            form.ShowDialog();
+            this.ActualizarForm();
+        }
+
+        private void CancelarAlquiler_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

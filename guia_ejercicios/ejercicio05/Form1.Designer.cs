@@ -30,33 +30,32 @@
         {
             this.jueces_listBox = new System.Windows.Forms.ListBox();
             this.jueces_groupBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.RegistrarJuez_btn = new System.Windows.Forms.Button();
             this.EliminarJuez_btn = new System.Windows.Forms.Button();
+            this.RegistrarJuez_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.canchas_groupBox = new System.Windows.Forms.GroupBox();
-            this.EliminarCancha_btn = new System.Windows.Forms.Button();
-            this.AgregarCancha_btn = new System.Windows.Forms.Button();
+            this.VerCancha_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.canchas_listBox = new System.Windows.Forms.ListBox();
             this.alquileres_groupBox = new System.Windows.Forms.GroupBox();
-            this.alquileres_listBox = new System.Windows.Forms.ListBox();
-            this.NuevoAlquiler_btn = new System.Windows.Forms.Button();
-            this.CancelarAlquiler_btn = new System.Windows.Forms.Button();
-            this.VerAlquiler_btn = new System.Windows.Forms.Button();
-            this.info_groupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cMasRecaudacion_lbl = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.masAlquilada_lbl = new System.Windows.Forms.Label();
-            this.masPartidos_lbl = new System.Windows.Forms.Label();
-            this.jMasRecaudacion_lbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.VerAlquiler_btn = new System.Windows.Forms.Button();
+            this.CancelarAlquiler_btn = new System.Windows.Forms.Button();
+            this.NuevoAlquiler_btn = new System.Windows.Forms.Button();
+            this.alquileres_listBox = new System.Windows.Forms.ListBox();
+            this.info_groupBox = new System.Windows.Forms.GroupBox();
+            this.jMasRecaudacion_lbl = new System.Windows.Forms.Label();
+            this.masPartidos_lbl = new System.Windows.Forms.Label();
+            this.masAlquilada_lbl = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cMasRecaudacion_lbl = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.jueces_groupBox.SuspendLayout();
             this.canchas_groupBox.SuspendLayout();
             this.alquileres_groupBox.SuspendLayout();
@@ -84,14 +83,15 @@
             this.jueces_groupBox.TabStop = false;
             this.jueces_groupBox.Text = "Jueces";
             // 
-            // label1
+            // EliminarJuez_btn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lista de jueces";
+            this.EliminarJuez_btn.Location = new System.Drawing.Point(96, 142);
+            this.EliminarJuez_btn.Name = "EliminarJuez_btn";
+            this.EliminarJuez_btn.Size = new System.Drawing.Size(81, 41);
+            this.EliminarJuez_btn.TabIndex = 3;
+            this.EliminarJuez_btn.Text = "Eliminar Juez";
+            this.EliminarJuez_btn.UseVisualStyleBackColor = true;
+            this.EliminarJuez_btn.Click += new System.EventHandler(this.EliminarJuez_btn_Click);
             // 
             // RegistrarJuez_btn
             // 
@@ -103,20 +103,18 @@
             this.RegistrarJuez_btn.UseVisualStyleBackColor = true;
             this.RegistrarJuez_btn.Click += new System.EventHandler(this.RegistrarJuez_btn_Click);
             // 
-            // EliminarJuez_btn
+            // label1
             // 
-            this.EliminarJuez_btn.Location = new System.Drawing.Point(96, 142);
-            this.EliminarJuez_btn.Name = "EliminarJuez_btn";
-            this.EliminarJuez_btn.Size = new System.Drawing.Size(81, 41);
-            this.EliminarJuez_btn.TabIndex = 3;
-            this.EliminarJuez_btn.Text = "Eliminar Juez";
-            this.EliminarJuez_btn.UseVisualStyleBackColor = true;
-            this.EliminarJuez_btn.Click += new System.EventHandler(this.EliminarJuez_btn_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Lista de jueces";
             // 
             // canchas_groupBox
             // 
-            this.canchas_groupBox.Controls.Add(this.EliminarCancha_btn);
-            this.canchas_groupBox.Controls.Add(this.AgregarCancha_btn);
+            this.canchas_groupBox.Controls.Add(this.VerCancha_btn);
             this.canchas_groupBox.Controls.Add(this.label2);
             this.canchas_groupBox.Controls.Add(this.canchas_listBox);
             this.canchas_groupBox.Location = new System.Drawing.Point(12, 208);
@@ -126,23 +124,15 @@
             this.canchas_groupBox.TabStop = false;
             this.canchas_groupBox.Text = "Canchas";
             // 
-            // EliminarCancha_btn
+            // VerCancha_btn
             // 
-            this.EliminarCancha_btn.Location = new System.Drawing.Point(96, 142);
-            this.EliminarCancha_btn.Name = "EliminarCancha_btn";
-            this.EliminarCancha_btn.Size = new System.Drawing.Size(81, 41);
-            this.EliminarCancha_btn.TabIndex = 3;
-            this.EliminarCancha_btn.Text = "Eliminar cancha";
-            this.EliminarCancha_btn.UseVisualStyleBackColor = true;
-            // 
-            // AgregarCancha_btn
-            // 
-            this.AgregarCancha_btn.Location = new System.Drawing.Point(9, 142);
-            this.AgregarCancha_btn.Name = "AgregarCancha_btn";
-            this.AgregarCancha_btn.Size = new System.Drawing.Size(81, 41);
-            this.AgregarCancha_btn.TabIndex = 2;
-            this.AgregarCancha_btn.Text = "Agregar cancha";
-            this.AgregarCancha_btn.UseVisualStyleBackColor = true;
+            this.VerCancha_btn.Location = new System.Drawing.Point(9, 143);
+            this.VerCancha_btn.Name = "VerCancha_btn";
+            this.VerCancha_btn.Size = new System.Drawing.Size(81, 41);
+            this.VerCancha_btn.TabIndex = 3;
+            this.VerCancha_btn.Text = "Ver cancha";
+            this.VerCancha_btn.UseVisualStyleBackColor = true;
+            this.VerCancha_btn.Click += new System.EventHandler(this.VerCancha_btn_Click);
             // 
             // label2
             // 
@@ -175,31 +165,14 @@
             this.alquileres_groupBox.TabStop = false;
             this.alquileres_groupBox.Text = "Alquileres";
             // 
-            // alquileres_listBox
+            // label8
             // 
-            this.alquileres_listBox.FormattingEnabled = true;
-            this.alquileres_listBox.Location = new System.Drawing.Point(9, 41);
-            this.alquileres_listBox.Name = "alquileres_listBox";
-            this.alquileres_listBox.Size = new System.Drawing.Size(255, 95);
-            this.alquileres_listBox.TabIndex = 4;
-            // 
-            // NuevoAlquiler_btn
-            // 
-            this.NuevoAlquiler_btn.Location = new System.Drawing.Point(96, 142);
-            this.NuevoAlquiler_btn.Name = "NuevoAlquiler_btn";
-            this.NuevoAlquiler_btn.Size = new System.Drawing.Size(81, 41);
-            this.NuevoAlquiler_btn.TabIndex = 4;
-            this.NuevoAlquiler_btn.Text = "Generar nuevo alquiler";
-            this.NuevoAlquiler_btn.UseVisualStyleBackColor = true;
-            // 
-            // CancelarAlquiler_btn
-            // 
-            this.CancelarAlquiler_btn.Location = new System.Drawing.Point(183, 142);
-            this.CancelarAlquiler_btn.Name = "CancelarAlquiler_btn";
-            this.CancelarAlquiler_btn.Size = new System.Drawing.Size(81, 41);
-            this.CancelarAlquiler_btn.TabIndex = 4;
-            this.CancelarAlquiler_btn.Text = "Cancelar alquiler";
-            this.CancelarAlquiler_btn.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Lista de alquileres";
             // 
             // VerAlquiler_btn
             // 
@@ -209,6 +182,35 @@
             this.VerAlquiler_btn.TabIndex = 5;
             this.VerAlquiler_btn.Text = "Ver alquiler";
             this.VerAlquiler_btn.UseVisualStyleBackColor = true;
+            this.VerAlquiler_btn.Click += new System.EventHandler(this.VerAlquiler_btn_Click);
+            // 
+            // CancelarAlquiler_btn
+            // 
+            this.CancelarAlquiler_btn.Location = new System.Drawing.Point(183, 142);
+            this.CancelarAlquiler_btn.Name = "CancelarAlquiler_btn";
+            this.CancelarAlquiler_btn.Size = new System.Drawing.Size(81, 41);
+            this.CancelarAlquiler_btn.TabIndex = 4;
+            this.CancelarAlquiler_btn.Text = "Cancelar alquiler";
+            this.CancelarAlquiler_btn.UseVisualStyleBackColor = true;
+            this.CancelarAlquiler_btn.Click += new System.EventHandler(this.CancelarAlquiler_btn_Click);
+            // 
+            // NuevoAlquiler_btn
+            // 
+            this.NuevoAlquiler_btn.Location = new System.Drawing.Point(96, 142);
+            this.NuevoAlquiler_btn.Name = "NuevoAlquiler_btn";
+            this.NuevoAlquiler_btn.Size = new System.Drawing.Size(81, 41);
+            this.NuevoAlquiler_btn.TabIndex = 4;
+            this.NuevoAlquiler_btn.Text = "Generar nuevo alquiler";
+            this.NuevoAlquiler_btn.UseVisualStyleBackColor = true;
+            this.NuevoAlquiler_btn.Click += new System.EventHandler(this.NuevoAlquiler_btn_Click);
+            // 
+            // alquileres_listBox
+            // 
+            this.alquileres_listBox.FormattingEnabled = true;
+            this.alquileres_listBox.Location = new System.Drawing.Point(9, 41);
+            this.alquileres_listBox.Name = "alquileres_listBox";
+            this.alquileres_listBox.Size = new System.Drawing.Size(255, 95);
+            this.alquileres_listBox.TabIndex = 4;
             // 
             // info_groupBox
             // 
@@ -231,95 +233,14 @@
             this.info_groupBox.TabStop = false;
             this.info_groupBox.Text = "Información";
             // 
-            // label3
+            // jMasRecaudacion_lbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Recaudación:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(164, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "recaudacion_value";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Ganancia:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "ganancia_value";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Cancha más alquilada:";
-            // 
-            // cMasRecaudacion_lbl
-            // 
-            this.cMasRecaudacion_lbl.AutoSize = true;
-            this.cMasRecaudacion_lbl.Location = new System.Drawing.Point(164, 101);
-            this.cMasRecaudacion_lbl.Name = "cMasRecaudacion_lbl";
-            this.cMasRecaudacion_lbl.Size = new System.Drawing.Size(98, 13);
-            this.cMasRecaudacion_lbl.TabIndex = 5;
-            this.cMasRecaudacion_lbl.Text = "recaudacion_value";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 101);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Cancha con más recaudación:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 127);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Juez con más partidos:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 156);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Juez con más recaudación:";
-            // 
-            // masAlquilada_lbl
-            // 
-            this.masAlquilada_lbl.AutoSize = true;
-            this.masAlquilada_lbl.Location = new System.Drawing.Point(164, 76);
-            this.masAlquilada_lbl.Name = "masAlquilada_lbl";
-            this.masAlquilada_lbl.Size = new System.Drawing.Size(101, 13);
-            this.masAlquilada_lbl.TabIndex = 9;
-            this.masAlquilada_lbl.Text = "masAlquilada_value";
+            this.jMasRecaudacion_lbl.AutoSize = true;
+            this.jMasRecaudacion_lbl.Location = new System.Drawing.Point(164, 156);
+            this.jMasRecaudacion_lbl.Name = "jMasRecaudacion_lbl";
+            this.jMasRecaudacion_lbl.Size = new System.Drawing.Size(98, 13);
+            this.jMasRecaudacion_lbl.TabIndex = 11;
+            this.jMasRecaudacion_lbl.Text = "recaudacion_value";
             // 
             // masPartidos_lbl
             // 
@@ -330,23 +251,95 @@
             this.masPartidos_lbl.TabIndex = 10;
             this.masPartidos_lbl.Text = "masPartidos_value";
             // 
-            // jMasRecaudacion_lbl
+            // masAlquilada_lbl
             // 
-            this.jMasRecaudacion_lbl.AutoSize = true;
-            this.jMasRecaudacion_lbl.Location = new System.Drawing.Point(164, 156);
-            this.jMasRecaudacion_lbl.Name = "jMasRecaudacion_lbl";
-            this.jMasRecaudacion_lbl.Size = new System.Drawing.Size(98, 13);
-            this.jMasRecaudacion_lbl.TabIndex = 11;
-            this.jMasRecaudacion_lbl.Text = "recaudacion_value";
+            this.masAlquilada_lbl.AutoSize = true;
+            this.masAlquilada_lbl.Location = new System.Drawing.Point(164, 76);
+            this.masAlquilada_lbl.Name = "masAlquilada_lbl";
+            this.masAlquilada_lbl.Size = new System.Drawing.Size(101, 13);
+            this.masAlquilada_lbl.TabIndex = 9;
+            this.masAlquilada_lbl.Text = "masAlquilada_value";
             // 
-            // label8
+            // label11
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Lista de alquileres";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 156);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(137, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Juez con más recaudación:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(115, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Juez con más partidos:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Cancha con más recaudación:";
+            // 
+            // cMasRecaudacion_lbl
+            // 
+            this.cMasRecaudacion_lbl.AutoSize = true;
+            this.cMasRecaudacion_lbl.Location = new System.Drawing.Point(164, 101);
+            this.cMasRecaudacion_lbl.Name = "cMasRecaudacion_lbl";
+            this.cMasRecaudacion_lbl.Size = new System.Drawing.Size(98, 13);
+            this.cMasRecaudacion_lbl.TabIndex = 5;
+            this.cMasRecaudacion_lbl.Text = "recaudacion_value";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Cancha más alquilada:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(164, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "ganancia_value";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Ganancia:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(164, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "recaudacion_value";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Recaudación:";
             // 
             // Form1
             // 
@@ -380,8 +373,6 @@
         private System.Windows.Forms.Button EliminarJuez_btn;
         private System.Windows.Forms.Button RegistrarJuez_btn;
         private System.Windows.Forms.GroupBox canchas_groupBox;
-        private System.Windows.Forms.Button EliminarCancha_btn;
-        private System.Windows.Forms.Button AgregarCancha_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox canchas_listBox;
         private System.Windows.Forms.GroupBox alquileres_groupBox;
@@ -403,6 +394,7 @@
         private System.Windows.Forms.Label masPartidos_lbl;
         private System.Windows.Forms.Label masAlquilada_lbl;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button VerCancha_btn;
     }
 }
 
