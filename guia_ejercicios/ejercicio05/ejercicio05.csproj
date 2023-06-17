@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Alquiler.cs" />
     <Compile Include="Cancha.cs" />
+    <Compile Include="Cita.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -52,8 +52,7 @@ namespace ejercicio05
                     2,
                     90,
                     35,
-                    "Agregar 2 jueces de línea, incrementando $90 al costo total.",
-                    true
+                    "Opcion 1 + 2 jueces de línea, incrementando $190 al costo total."
                 );
 
             Cancha tenis = new Cancha(1, "Tenis", 200, new List<Opcion>{ opcional01 });
@@ -64,9 +63,7 @@ namespace ejercicio05
             this._canchas = new List<Cancha> { tenis, futbol5, futbol7, futbol11 };
         }
 
-
         // Operaciones de canchas
-
         public bool ComprobarID(Cancha unaCancha)
         {
             Cancha busqueda = this._canchas.Find(cancha => cancha.Id == unaCancha.Id);
@@ -79,7 +76,6 @@ namespace ejercicio05
         }
 
         // Operaciones de jueces
-
         public bool ComprobarID(Juez unJuez)
         {
             Juez busqueda = this._jueces.Find(juez => juez.Legajo == unJuez.Legajo);
@@ -96,11 +92,31 @@ namespace ejercicio05
             this._jueces.Remove(unJuez);
         }
 
-        // Operaciones de alquileres
-
-        public void GenerarAlquiler()
+        public List<Juez> JuecesDisponibles(DateTime fecha, int horario, int horas)
         {
+            List<Juez> juecesDisponibles = new List<Juez>();
 
+            foreach (Juez juez in this._jueces)
+            {
+                if (juez.ComprobarCita(fecha, horario, horario + horas))
+                {
+                    juecesDisponibles.Add(juez);
+                }
+            }
+
+            return juecesDisponibles;
+        } 
+
+        // Operaciones de alquileres
+        public void GenerarAlquiler(Cancha cancha, List<Juez> jueces, DateTime fecha, int horaInicial, int horas, Opcion opcion)
+        {
+            foreach (Juez juez in jueces)
+            {
+                juez.OrganizarCita(fecha, horaInicial, horaInicial + horas);
+            }
+
+            Alquiler nuevoAlquiler = new Alquiler(cancha, jueces, fecha, horaInicial, horas, opcion);
+            this._alquileres.Add(nuevoAlquiler);
         }
 
         public List<Alquiler> FiltarAlquileres(DateTime fecha)
@@ -114,6 +130,49 @@ namespace ejercicio05
 
             return alquileresFiltrados;
         }
+
+        public float CalcularTotalAlquiler(Cancha cancha, Opcion opcion, int horas)
+        {
+            float total;
+
+            if (opcion != null)
+            {
+                total = (cancha.Precio + opcion.Aumento) * horas;
+            }
+            else
+            {
+                total = cancha.Precio * horas;
+            }
+
+            return total;
+        }
+
+        public bool ComprobarDisponibilidad(DateTime fecha, int horas, int horaInicio)
+        {
+            bool disponible = true;
+
+            if (this._alquileres.Count > 0)
+            {
+                List<Alquiler> alquilerMismaFecha = this._alquileres.FindAll(alquiler => alquiler.Fecha == fecha);
+
+                if (alquilerMismaFecha.Count != 0)
+                {
+                    if (alquilerMismaFecha.Exists(alquiler => alquiler.HoraInicial == horaInicio))
+                    {
+                        disponible = false;
+                    } else if (alquilerMismaFecha.Exists(alquiler => alquiler.HoraInicial > horaInicio && alquiler.HoraInicial < (horaInicio + horas)))
+                    {
+                        disponible = false;
+                    } else if (alquilerMismaFecha.Exists(alquiler => alquiler.HoraFinal > horaInicio && alquiler.HoraFinal < (horaInicio + horas)))
+                    {
+                        disponible = false;
+                    }
+                }
+            }
+
+            return disponible;
+        }
+
 
 
     }

@@ -12,7 +12,6 @@ namespace ejercicio05
         private float _aumento;         // Aumento de la cancha
         private float _remuneracion;    // Pago al juez
         private string _descripcion;
-        private bool _adicional;        // Es la condición para saber si depende de otra opcion para ser elegida
 
         public int Jueces
         {
@@ -34,18 +33,12 @@ namespace ejercicio05
             get { return _descripcion; }
         }
 
-        public bool Adicional
-        {
-            get { return _adicional; }
-        }
-
-        public Opcion(int jueces, float aumento, float remuneracion, string descripcion, bool adicional = false)
+        public Opcion(int jueces, float aumento, float remuneracion, string descripcion)
         {
             this._jueces = jueces;
             this._aumento = aumento;
             this._remuneracion = remuneracion;
             this._descripcion = descripcion;
-            this._adicional = adicional;
         }
 
         public override string ToString()
