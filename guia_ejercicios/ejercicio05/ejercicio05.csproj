@@ -87,6 +87,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_alquilerInfo.resx">
+      <DependentUpon>Frm_alquilerInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_nuevoAlquiler.resx">
       <DependentUpon>Frm_nuevoAlquiler.cs</DependentUpon>
     </EmbeddedResource>

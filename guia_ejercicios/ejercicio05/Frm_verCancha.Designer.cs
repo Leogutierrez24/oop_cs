@@ -134,6 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Frm_verCancha";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "s";
             this.Load += new System.EventHandler(this.Frm_verCancha_Load);
             this.ResumeLayout(false);

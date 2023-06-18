@@ -84,5 +84,10 @@ namespace ejercicio05
 
             return total;
         }
+
+        public override string ToString()
+        {
+            return $"{this._fecha.ToShortDateString()} {this._cancha.Tipo} {this._horaInicial}";
+        }
     }
 }

@@ -122,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.legajo_numericUpDown);
             this.Name = "Frm_registrarJuez";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Juez";
             ((System.ComponentModel.ISupportInitialize)(this.legajo_numericUpDown)).EndInit();
             this.ResumeLayout(false);

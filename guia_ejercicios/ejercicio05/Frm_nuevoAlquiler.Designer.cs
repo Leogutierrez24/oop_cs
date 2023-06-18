@@ -309,6 +309,7 @@
             this.jueces_listBox.FormattingEnabled = true;
             this.jueces_listBox.Location = new System.Drawing.Point(125, 179);
             this.jueces_listBox.Name = "jueces_listBox";
+            this.jueces_listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.jueces_listBox.Size = new System.Drawing.Size(255, 95);
             this.jueces_listBox.TabIndex = 23;
             // 
@@ -342,6 +343,7 @@
             this.Controls.Add(this.Cancha_comboBox);
             this.Controls.Add(this.label1);
             this.Name = "Frm_nuevoAlquiler";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar Alquiler";
             this.Load += new System.EventHandler(this.Frm_nuevoAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.horas_numericUpDown)).EndInit();

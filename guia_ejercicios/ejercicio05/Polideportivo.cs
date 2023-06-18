@@ -42,23 +42,30 @@ namespace ejercicio05
         {
             Opcion opcional01 = new Opcion
                 (
+                    0,
+                    0,
+                    0,
+                    "No agrega adicional."
+                );
+            Opcion opcional02 = new Opcion
+                (
                     1,
                     100,
                     50,
                     "Agregar 1 juez, adiciona $100 al valor de la cancha."
                 );
-            Opcion opcional02 = new Opcion
+            Opcion opcional03 = new Opcion
                 (
-                    2,
-                    90,
+                    3,
+                    190,
                     35,
                     "Opcion 1 + 2 jueces de línea, incrementando $190 al costo total."
                 );
 
-            Cancha tenis = new Cancha(1, "Tenis", 200, new List<Opcion>{ opcional01 });
-            Cancha futbol5 = new Cancha(2, "Fútbol 5", 500);
-            Cancha futbol7 = new Cancha(3, "Fútbol 7", 650, new List<Opcion>{ opcional01 });
-            Cancha futbol11 = new Cancha(4, "Fútbol 11", 800, new List<Opcion>{ opcional01, opcional02 });
+            Cancha tenis = new Cancha(1, "Tenis", 200, new List<Opcion>{ opcional01, opcional02 });
+            Cancha futbol5 = new Cancha(2, "Fútbol 5", 500, new List<Opcion> { opcional01 });
+            Cancha futbol7 = new Cancha(3, "Fútbol 7", 650, new List<Opcion>{ opcional01, opcional02 });
+            Cancha futbol11 = new Cancha(4, "Fútbol 11", 800, new List<Opcion>{ opcional01, opcional02, opcional03 });
 
             this._canchas = new List<Cancha> { tenis, futbol5, futbol7, futbol11 };
         }
@@ -108,15 +115,42 @@ namespace ejercicio05
         } 
 
         // Operaciones de alquileres
-        public void GenerarAlquiler(Cancha cancha, List<Juez> jueces, DateTime fecha, int horaInicial, int horas, Opcion opcion)
+        public Alquiler GenerarAlquiler(Cancha cancha, List<Juez> jueces, DateTime fecha, int horaInicial, int horas, Opcion opcion)
         {
-            foreach (Juez juez in jueces)
-            {
-                juez.OrganizarCita(fecha, horaInicial, horaInicial + horas);
-            }
+            Alquiler nuevoAlquiler;
 
-            Alquiler nuevoAlquiler = new Alquiler(cancha, jueces, fecha, horaInicial, horas, opcion);
-            this._alquileres.Add(nuevoAlquiler);
+            /* Para que se genere el alquiler deben darse 2 verificaciones:
+                1) La cantidad de jueces que se requieren adicionar
+                2) Que la fecha y el horario no coincida con otro alquiler ya realizado 
+               En caso de exito se retorna el alquiler solicitado, caso contrario devolvera null 
+            */
+
+            if (jueces.Count == opcion.Jueces) 
+            {
+                if (this.ComprobarDisponibilidad(cancha, fecha, horas, horaInicial))
+                {
+                    if (jueces.Count != 0)
+                    {
+                        foreach (Juez juez in jueces)
+                        {
+                            juez.OrganizarCita(fecha, horaInicial, horaInicial + horas);
+                        }
+                    }
+
+                    nuevoAlquiler = new Alquiler(cancha, jueces, fecha, horaInicial, horas, opcion);
+                    this._alquileres.Add(nuevoAlquiler);
+                }
+                else 
+                {
+                    nuevoAlquiler = null;
+                }
+            } else
+            {
+                nuevoAlquiler = null;
+            }
+            
+
+            return nuevoAlquiler;
         }
 
         public List<Alquiler> FiltarAlquileres(DateTime fecha)
@@ -147,13 +181,19 @@ namespace ejercicio05
             return total;
         }
 
-        public bool ComprobarDisponibilidad(DateTime fecha, int horas, int horaInicio)
+        public bool ComprobarDisponibilidad(Cancha cancha, DateTime fecha, int horas, int horaInicio)
         {
             bool disponible = true;
 
+            /*
+            Comprobación de disponibilidad de una cancha respecto de la fecha y el horario solicitado.
+            Se concideran: Si existen alquileres, fecha u horario en que comienza y finaliza.
+            Retorna true por la disponibilidad, false por el caso contrario.
+             */
+
             if (this._alquileres.Count > 0)
             {
-                List<Alquiler> alquilerMismaFecha = this._alquileres.FindAll(alquiler => alquiler.Fecha == fecha);
+                List<Alquiler> alquilerMismaFecha = this._alquileres.FindAll(alquiler => alquiler.Fecha == fecha && alquiler.Cancha == cancha);
 
                 if (alquilerMismaFecha.Count != 0)
                 {
