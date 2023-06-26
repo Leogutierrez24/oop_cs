@@ -46,14 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Adicional.cs" />
+    <Compile Include="AgregarHuesped_frm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AgregarHuesped_frm.Designer.cs">
+      <DependentUpon>AgregarHuesped_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hotel.cs" />
+    <Compile Include="HabCuadruple.cs" />
+    <Compile Include="HabDoble.cs" />
+    <Compile Include="Frm_Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Inicio.Designer.cs">
+      <DependentUpon>Frm_Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Habitacion.cs" />
+    <Compile Include="HabSimple.cs" />
+    <Compile Include="HabTriple.cs" />
+    <Compile Include="Huesped.cs" />
+    <Compile Include="Huespedes_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Huespedes_frm.Designer.cs">
+      <DependentUpon>Huespedes_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reserva.cs" />
+    <Compile Include="VerHabitacion_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerHabitacion_frm.Designer.cs">
+      <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarHuesped_frm.resx">
+      <DependentUpon>AgregarHuesped_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Inicio.resx">
+      <DependentUpon>Frm_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Huespedes_frm.resx">
+      <DependentUpon>Huespedes_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VerHabitacion_frm.resx">
+      <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

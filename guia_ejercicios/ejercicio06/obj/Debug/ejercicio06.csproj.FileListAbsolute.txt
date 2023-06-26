@@ -1,0 +1,14 @@
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\bin\Debug\ejercicio06.exe.config
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\bin\Debug\ejercicio06.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\bin\Debug\ejercicio06.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.csproj.AssemblyReference.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.csproj.SuggestedBindingRedirects.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.Frm_Inicio.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.Properties.Resources.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.csproj.GenerateResource.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.csproj.CoreCompileInputs.cache
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.exe
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.pdb
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.VerHabitacion_frm.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.AgregarHuesped_frm.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.Huespedes_frm.resources

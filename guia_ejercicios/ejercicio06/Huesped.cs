@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ejercicio06
 {
-    public class Ocupante
+    public class Huesped
     {
         private string _nombre;
 
@@ -43,13 +43,18 @@ namespace ejercicio06
             get { return _documento; }
         }
 
-        public Ocupante(long documento, string nombre, string apellido, int edad, DateTime fechaNacimiento)
+        public Huesped(long documento, string nombre, string apellido, int edad, DateTime fechaNacimiento)
         {
             this._documento = documento;
             this._nombre = nombre;
             this._apellido = apellido;
             this._edad = edad;
             this._fechaNacimiento = fechaNacimiento;
+        }
+
+        public override string ToString()
+        {
+            return $"{this._documento} {this._nombre} {this._apellido}";
         }
     }
 }

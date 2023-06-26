@@ -22,6 +22,13 @@ namespace ejercicio06
             get { return _costo; }
         }
 
+        protected List<string> _camas;
+
+        public List<string> Camas
+        {
+            get { return _camas; }
+        }
+
         private List<string> _artefactos = new List<string> {"Frigo Bar", "Aire acondicionado", "Televisor" };
 
         public List<string> Artefactos

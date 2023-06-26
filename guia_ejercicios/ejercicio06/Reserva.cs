@@ -19,9 +19,9 @@ namespace ejercicio06
             get { return _habitaciones; }
         }
 
-        private List<Ocupante> _ocupantes = new List<Ocupante>();
+        private List<Huesped> _ocupantes = new List<Huesped>();
 
-        public List<Ocupante> Ocupantes
+        public List<Huesped> Ocupantes
         {
             get { return _ocupantes; }
         }
@@ -78,7 +78,7 @@ namespace ejercicio06
         public Reserva(
             int numeroReserva,
             List<Habitacion> habitaciones,
-            List<Ocupante> ocupantes,
+            List<Huesped> ocupantes,
             List<Adicional> adicionales,
             DateTime fechaEntrada,
             DateTime fechaSalida,
