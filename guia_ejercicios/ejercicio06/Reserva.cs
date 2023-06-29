@@ -61,18 +61,11 @@ namespace ejercicio06
             get { return _deposito; }
         }
 
-        private float _total;
+        private float _subtotal;
 
-        public float Total
+        public float Subtotal
         {
-            get { return _total; }
-        }
-
-        private int _duracion;
-
-        public int Duracion // en DÍAS
-        {
-            get { return _duracion; }
+            get { return _subtotal; }
         }
 
         public Reserva(
@@ -94,8 +87,7 @@ namespace ejercicio06
             this._fechaEntrada = fechaEntrada;
             this._fechaSalida = fechaSalida;
             this._deposito = deposito;
-            this._total = total;
-            this._duracion = fechaSalida.Day - fechaEntrada.Day;
+            this._subtotal = total;
         }
     }
 }

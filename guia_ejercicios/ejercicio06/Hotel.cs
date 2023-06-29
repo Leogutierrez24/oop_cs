@@ -8,6 +8,8 @@ namespace ejercicio06
 {
     public class Hotel
     {
+        private int _numReservas = 0;
+
         private List<Habitacion> _habitaciones = new List<Habitacion>();
 
         public List<Habitacion> Habitaciones
@@ -85,5 +87,9 @@ namespace ejercicio06
 
             return comprobacion;
         }
+
+        // métodos de operaciones con reservas
+
+
     }
 }

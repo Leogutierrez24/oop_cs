@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Habitaciones_listBox = new System.Windows.Forms.ListBox();
             this.VerHabitacion_btn = new System.Windows.Forms.Button();
-            this.Reservas_listBox = new System.Windows.Forms.ListBox();
-            this.VerReserva_btn = new System.Windows.Forms.Button();
+            this.Habitaciones_listBox = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CancelarReserva_btn = new System.Windows.Forms.Button();
+            this.VerReserva_btn = new System.Windows.Forms.Button();
+            this.Reservas_listBox = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.RegistrarHuesped_btn = new System.Windows.Forms.Button();
-            this.GenerarReserva_btn = new System.Windows.Forms.Button();
-            this.GenerarResumen_btn = new System.Windows.Forms.Button();
             this.VerHuespedes_btn = new System.Windows.Forms.Button();
+            this.GenerarResumen_btn = new System.Windows.Forms.Button();
+            this.GenerarReserva_btn = new System.Windows.Forms.Button();
+            this.RegistrarHuesped_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -56,6 +56,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Habitaciones";
             // 
+            // VerHabitacion_btn
+            // 
+            this.VerHabitacion_btn.Location = new System.Drawing.Point(6, 198);
+            this.VerHabitacion_btn.Name = "VerHabitacion_btn";
+            this.VerHabitacion_btn.Size = new System.Drawing.Size(79, 39);
+            this.VerHabitacion_btn.TabIndex = 1;
+            this.VerHabitacion_btn.Text = "Ver Habitación";
+            this.VerHabitacion_btn.UseVisualStyleBackColor = true;
+            this.VerHabitacion_btn.Click += new System.EventHandler(this.VerHabitacion_btn_Click);
+            // 
+            // Habitaciones_listBox
+            // 
+            this.Habitaciones_listBox.FormattingEnabled = true;
+            this.Habitaciones_listBox.Location = new System.Drawing.Point(6, 19);
+            this.Habitaciones_listBox.Name = "Habitaciones_listBox";
+            this.Habitaciones_listBox.Size = new System.Drawing.Size(295, 173);
+            this.Habitaciones_listBox.TabIndex = 0;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.CancelarReserva_btn);
@@ -68,31 +86,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reservas";
             // 
-            // Habitaciones_listBox
+            // CancelarReserva_btn
             // 
-            this.Habitaciones_listBox.FormattingEnabled = true;
-            this.Habitaciones_listBox.Location = new System.Drawing.Point(6, 19);
-            this.Habitaciones_listBox.Name = "Habitaciones_listBox";
-            this.Habitaciones_listBox.Size = new System.Drawing.Size(295, 173);
-            this.Habitaciones_listBox.TabIndex = 0;
-            // 
-            // VerHabitacion_btn
-            // 
-            this.VerHabitacion_btn.Location = new System.Drawing.Point(6, 198);
-            this.VerHabitacion_btn.Name = "VerHabitacion_btn";
-            this.VerHabitacion_btn.Size = new System.Drawing.Size(79, 39);
-            this.VerHabitacion_btn.TabIndex = 1;
-            this.VerHabitacion_btn.Text = "Ver Habitación";
-            this.VerHabitacion_btn.UseVisualStyleBackColor = true;
-            this.VerHabitacion_btn.Click += new System.EventHandler(this.VerHabitacion_btn_Click);
-            // 
-            // Reservas_listBox
-            // 
-            this.Reservas_listBox.FormattingEnabled = true;
-            this.Reservas_listBox.Location = new System.Drawing.Point(6, 19);
-            this.Reservas_listBox.Name = "Reservas_listBox";
-            this.Reservas_listBox.Size = new System.Drawing.Size(295, 173);
-            this.Reservas_listBox.TabIndex = 2;
+            this.CancelarReserva_btn.Location = new System.Drawing.Point(91, 198);
+            this.CancelarReserva_btn.Name = "CancelarReserva_btn";
+            this.CancelarReserva_btn.Size = new System.Drawing.Size(98, 39);
+            this.CancelarReserva_btn.TabIndex = 3;
+            this.CancelarReserva_btn.Text = "Cancelar Reserva";
+            this.CancelarReserva_btn.UseVisualStyleBackColor = true;
             // 
             // VerReserva_btn
             // 
@@ -103,14 +104,13 @@
             this.VerReserva_btn.Text = "Ver Reserva";
             this.VerReserva_btn.UseVisualStyleBackColor = true;
             // 
-            // CancelarReserva_btn
+            // Reservas_listBox
             // 
-            this.CancelarReserva_btn.Location = new System.Drawing.Point(91, 198);
-            this.CancelarReserva_btn.Name = "CancelarReserva_btn";
-            this.CancelarReserva_btn.Size = new System.Drawing.Size(98, 39);
-            this.CancelarReserva_btn.TabIndex = 3;
-            this.CancelarReserva_btn.Text = "Cancelar Reserva";
-            this.CancelarReserva_btn.UseVisualStyleBackColor = true;
+            this.Reservas_listBox.FormattingEnabled = true;
+            this.Reservas_listBox.Location = new System.Drawing.Point(6, 19);
+            this.Reservas_listBox.Name = "Reservas_listBox";
+            this.Reservas_listBox.Size = new System.Drawing.Size(295, 173);
+            this.Reservas_listBox.TabIndex = 2;
             // 
             // groupBox3
             // 
@@ -125,24 +125,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Operaciones";
             // 
-            // RegistrarHuesped_btn
+            // VerHuespedes_btn
             // 
-            this.RegistrarHuesped_btn.Location = new System.Drawing.Point(6, 32);
-            this.RegistrarHuesped_btn.Name = "RegistrarHuesped_btn";
-            this.RegistrarHuesped_btn.Size = new System.Drawing.Size(75, 39);
-            this.RegistrarHuesped_btn.TabIndex = 0;
-            this.RegistrarHuesped_btn.Text = "Registrar Huésped";
-            this.RegistrarHuesped_btn.UseVisualStyleBackColor = true;
-            this.RegistrarHuesped_btn.Click += new System.EventHandler(this.RegistrarHuesped_btn_Click);
-            // 
-            // GenerarReserva_btn
-            // 
-            this.GenerarReserva_btn.Location = new System.Drawing.Point(168, 32);
-            this.GenerarReserva_btn.Name = "GenerarReserva_btn";
-            this.GenerarReserva_btn.Size = new System.Drawing.Size(75, 39);
-            this.GenerarReserva_btn.TabIndex = 1;
-            this.GenerarReserva_btn.Text = "Generar Reserva";
-            this.GenerarReserva_btn.UseVisualStyleBackColor = true;
+            this.VerHuespedes_btn.Location = new System.Drawing.Point(87, 32);
+            this.VerHuespedes_btn.Name = "VerHuespedes_btn";
+            this.VerHuespedes_btn.Size = new System.Drawing.Size(75, 39);
+            this.VerHuespedes_btn.TabIndex = 3;
+            this.VerHuespedes_btn.Text = "Ver Huéspedes";
+            this.VerHuespedes_btn.UseVisualStyleBackColor = true;
+            this.VerHuespedes_btn.Click += new System.EventHandler(this.VerHuespedes_btn_Click);
             // 
             // GenerarResumen_btn
             // 
@@ -153,15 +144,25 @@
             this.GenerarResumen_btn.Text = "Generar Resumen";
             this.GenerarResumen_btn.UseVisualStyleBackColor = true;
             // 
-            // VerHuespedes_btn
+            // GenerarReserva_btn
             // 
-            this.VerHuespedes_btn.Location = new System.Drawing.Point(87, 32);
-            this.VerHuespedes_btn.Name = "VerHuespedes_btn";
-            this.VerHuespedes_btn.Size = new System.Drawing.Size(75, 39);
-            this.VerHuespedes_btn.TabIndex = 3;
-            this.VerHuespedes_btn.Text = "Ver Huéspedes";
-            this.VerHuespedes_btn.UseVisualStyleBackColor = true;
-            this.VerHuespedes_btn.Click += new System.EventHandler(this.VerHuespedes_btn_Click);
+            this.GenerarReserva_btn.Location = new System.Drawing.Point(168, 32);
+            this.GenerarReserva_btn.Name = "GenerarReserva_btn";
+            this.GenerarReserva_btn.Size = new System.Drawing.Size(75, 39);
+            this.GenerarReserva_btn.TabIndex = 1;
+            this.GenerarReserva_btn.Text = "Generar Reserva";
+            this.GenerarReserva_btn.UseVisualStyleBackColor = true;
+            this.GenerarReserva_btn.Click += new System.EventHandler(this.GenerarReserva_btn_Click);
+            // 
+            // RegistrarHuesped_btn
+            // 
+            this.RegistrarHuesped_btn.Location = new System.Drawing.Point(6, 32);
+            this.RegistrarHuesped_btn.Name = "RegistrarHuesped_btn";
+            this.RegistrarHuesped_btn.Size = new System.Drawing.Size(75, 39);
+            this.RegistrarHuesped_btn.TabIndex = 0;
+            this.RegistrarHuesped_btn.Text = "Registrar Huésped";
+            this.RegistrarHuesped_btn.UseVisualStyleBackColor = true;
+            this.RegistrarHuesped_btn.Click += new System.EventHandler(this.RegistrarHuesped_btn_Click);
             // 
             // Frm_Inicio
             // 

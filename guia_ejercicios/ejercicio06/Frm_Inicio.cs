@@ -61,5 +61,10 @@ namespace ejercicio06
             Huespedes_frm form = new Huespedes_frm(this.hotel);
             form.ShowDialog();
         }
+
+        private void GenerarReserva_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
