@@ -27,5 +27,10 @@ namespace ejercicio06
             this._descripcion = descripcion;
             this._costo = costo;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} ${1:0.00}", this._descripcion, this._costo);
+        }
     }
 }

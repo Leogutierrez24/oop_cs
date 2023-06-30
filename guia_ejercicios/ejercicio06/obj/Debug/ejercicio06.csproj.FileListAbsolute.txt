@@ -12,3 +12,5 @@ I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.VerHabitacion_frm.resources
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.AgregarHuesped_frm.resources
 I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.Huespedes_frm.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.AgregarExtra_frm.resources
+I:\Facultad\poo\guia\development\guia_ejercicios\ejercicio06\obj\Debug\ejercicio06.GenerarReserva_frm.resources

@@ -31,6 +31,13 @@ namespace ejercicio06
             get { return _huespedes; }
         }
 
+        private List<Adicional> _adicionales = new List<Adicional>();
+
+        public List<Adicional> Adicionales
+        {
+            get { return _adicionales; }
+        }
+
         public Hotel() 
         {
             this.InicializarHotel();
@@ -55,6 +62,10 @@ namespace ejercicio06
 
             this._huespedes = new List<Huesped> { huesped_01, huesped_02 };
 
+            Adicional adicional1 = new Adicional("Agregar cuna a la habitación", 50);
+            Adicional adicional2 = new Adicional("Consumo del frigobar", 17);
+
+            this._adicionales = new List<Adicional> { adicional1, adicional2 };
         }
 
         // métodos de operaciones con los huspedes
@@ -90,6 +101,70 @@ namespace ejercicio06
 
         // métodos de operaciones con reservas
 
+        public float CalcularCosto(Habitacion habitacion, int cantDias, List<Adicional> adicionales)
+        {
+            float resultado = 0;
 
+            float costo = habitacion.Costo;
+
+            if (adicionales.Count > 0) adicionales.ForEach(adicional => costo += adicional.Costo);
+
+            resultado = costo * cantDias;
+
+            return resultado;
+        }
+
+        public float CalcularDepositoMinimo(float total)
+        {
+            return (total * 10) / 100;
+        }
+
+        public int CalcularDiasReserva(DateTime fechaCheckin, DateTime fechaCheckout)
+        {
+            TimeSpan cantDias = fechaCheckout - fechaCheckin;
+
+            return cantDias.Days + 1;
+        }
+
+        public Reserva GenerarReserva(
+            Habitacion habitacion,
+            List<Huesped> ocupantes,
+            List<Adicional> adicionales,
+            DateTime fechaEntrada,
+            DateTime fechaSalida,
+            float deposito,
+            float total)
+        {
+            Reserva nuevaReserva = new Reserva(
+                    this._numReservas + 1,
+                    habitacion,
+                    ocupantes,
+                    adicionales,
+                    fechaEntrada,
+                    fechaSalida,
+                    deposito,
+                    total
+                );
+
+            this._numReservas++;
+
+            this._reservas.Add(nuevaReserva);
+
+            return nuevaReserva;
+        }
+
+        // métodos de operaciones con adicionales
+
+        public Adicional CrearAdicional(string descripcion, float costo)
+        {
+            Adicional nuevoAdicional = null;
+
+            if (costo > 0)
+            {
+                nuevoAdicional = new Adicional(descripcion, costo);
+            }
+
+            return nuevoAdicional;
+        }
     }
 }

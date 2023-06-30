@@ -53,6 +53,18 @@
     <Compile Include="AgregarHuesped_frm.Designer.cs">
       <DependentUpon>AgregarHuesped_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarExtra_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarExtra_frm.Designer.cs">
+      <DependentUpon>AgregarExtra_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarReserva_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarReserva_frm.Designer.cs">
+      <DependentUpon>GenerarReserva_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hotel.cs" />
     <Compile Include="HabCuadruple.cs" />
     <Compile Include="HabDoble.cs" />
@@ -81,11 +93,17 @@
     <Compile Include="VerHabitacion_frm.Designer.cs">
       <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarExtra_frm.resx">
+      <DependentUpon>AgregarExtra_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarHuesped_frm.resx">
       <DependentUpon>AgregarHuesped_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Inicio.resx">
       <DependentUpon>Frm_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarReserva_frm.resx">
+      <DependentUpon>GenerarReserva_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Huespedes_frm.resx">
       <DependentUpon>Huespedes_frm.cs</DependentUpon>
@@ -103,7 +121,6 @@
       <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

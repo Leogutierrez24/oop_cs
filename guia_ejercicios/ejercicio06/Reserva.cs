@@ -12,11 +12,11 @@ namespace ejercicio06
 
         public int numeroReserva { get {  return _numeroReserva; } }
 
-        private List<Habitacion> _habitaciones = new List<Habitacion>();
+        private Habitacion _habitacion;
 
-        public List<Habitacion> Habitaciones
+        public Habitacion Habitacion
         {
-            get { return _habitaciones; }
+            get { return _habitacion; }
         }
 
         private List<Huesped> _ocupantes = new List<Huesped>();
@@ -70,7 +70,7 @@ namespace ejercicio06
 
         public Reserva(
             int numeroReserva,
-            List<Habitacion> habitaciones,
+            Habitacion habitacion,
             List<Huesped> ocupantes,
             List<Adicional> adicionales,
             DateTime fechaEntrada,
@@ -80,14 +80,19 @@ namespace ejercicio06
             )
         {
             this._numeroReserva = numeroReserva;
-            this._habitaciones = habitaciones;
+            this._habitacion = habitacion;
             this._ocupantes = ocupantes;
             this._adicionales = adicionales;
-            this._fechaReserva = DateTime.Now.Date;
+            this._fechaReserva = DateTime.Now;
             this._fechaEntrada = fechaEntrada;
             this._fechaSalida = fechaSalida;
             this._deposito = deposito;
             this._subtotal = total;
+        }
+
+        public override string ToString()
+        {
+            return $"00{this.numeroReserva} {this.FechaReserva.ToShortDateString()}";
         }
     }
 }

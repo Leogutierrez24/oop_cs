@@ -64,7 +64,9 @@ namespace ejercicio06
 
         private void GenerarReserva_btn_Click(object sender, EventArgs e)
         {
-
+            GenerarReserva_frm form = new GenerarReserva_frm(this.hotel);
+            form.ShowDialog();
+            this.ActualizarForm();
         }
     }
 }
