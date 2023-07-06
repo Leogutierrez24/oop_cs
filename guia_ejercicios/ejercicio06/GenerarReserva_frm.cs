@@ -64,6 +64,7 @@ namespace ejercicio06
 
                 this.deposito = this.hotel.CalcularDepositoMinimo(this.subtotal);
                 Deposito_numericUpDown.Minimum = (decimal)this.hotel.CalcularDepositoMinimo(this.subtotal);
+                Deposito_numericUpDown.Value = Deposito_numericUpDown.Minimum;
                 Deposito_numericUpDown.Maximum = (decimal)this.subtotal;
                 subtotal_textBox.Text = string.Format("${0:0.00}", this.subtotal);
             }
@@ -164,8 +165,16 @@ namespace ejercicio06
                     this.deposito,
                     this.subtotal
                     );
-                MessageBox.Show($"¡Se generó la reserva n° 00{nuevaReserva.numeroReserva} con éxito!");
-                this.Close();
+
+                if (nuevaReserva != null)
+                {
+                    MessageBox.Show($"¡Se generó la reserva n° 00{nuevaReserva.numeroReserva} con éxito!");
+                    this.Close();
+                } else
+                {
+                    error_lbl.Visible = true;
+                }
+                
             } else
             {
                 MessageBox.Show("¡Faltan campos por completar!");

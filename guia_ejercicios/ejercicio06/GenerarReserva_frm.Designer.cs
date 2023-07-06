@@ -62,6 +62,7 @@
             this.Cancelar_btn = new System.Windows.Forms.Button();
             this.Adicional2_checkBox = new System.Windows.Forms.CheckBox();
             this.AgregarExtra_btn = new System.Windows.Forms.Button();
+            this.error_lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Deposito_numericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -396,11 +397,24 @@
             this.AgregarExtra_btn.UseVisualStyleBackColor = true;
             this.AgregarExtra_btn.Click += new System.EventHandler(this.AgregarExtra_btn_Click);
             // 
+            // error_lbl
+            // 
+            this.error_lbl.AutoSize = true;
+            this.error_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_lbl.ForeColor = System.Drawing.Color.Firebrick;
+            this.error_lbl.Location = new System.Drawing.Point(334, 463);
+            this.error_lbl.Name = "error_lbl";
+            this.error_lbl.Size = new System.Drawing.Size(339, 15);
+            this.error_lbl.TabIndex = 17;
+            this.error_lbl.Text = "* El rango de fechas establecido coincide con uno existente *";
+            this.error_lbl.Visible = false;
+            // 
             // GenerarReserva_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 565);
+            this.Controls.Add(this.error_lbl);
             this.Controls.Add(this.AgregarExtra_btn);
             this.Controls.Add(this.Adicional2_checkBox);
             this.Controls.Add(this.Cancelar_btn);
@@ -465,5 +479,6 @@
         private System.Windows.Forms.ListBox AgregadosElegidos_listBox;
         private System.Windows.Forms.Button EliminarHuesped_btn;
         private System.Windows.Forms.Button EliminarAgregado_btn;
+        private System.Windows.Forms.Label error_lbl;
     }
 }

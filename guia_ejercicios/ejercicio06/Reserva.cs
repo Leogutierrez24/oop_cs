@@ -68,6 +68,20 @@ namespace ejercicio06
             get { return _subtotal; }
         }
 
+        private bool _checkinEstado;
+
+        public bool CheckinEstado
+        {
+            get { return _checkinEstado; }
+        }
+
+        private bool _checkoutEstado;
+
+        public bool CheckoutEstado
+        {
+            get { return _checkoutEstado; }
+        }
+
         public Reserva(
             int numeroReserva,
             Habitacion habitacion,
@@ -88,11 +102,23 @@ namespace ejercicio06
             this._fechaSalida = fechaSalida;
             this._deposito = deposito;
             this._subtotal = total;
+            this._checkinEstado = false;
+            this._checkoutEstado = false;
         }
 
         public override string ToString()
         {
             return $"00{this.numeroReserva} {this.FechaReserva.ToShortDateString()}";
+        }
+
+        public void ConcretarCheckin()
+        {
+            this._checkinEstado = true;
+        }
+
+        public void ConcretarCheckout()
+        {
+            this._checkoutEstado = true;
         }
     }
 }

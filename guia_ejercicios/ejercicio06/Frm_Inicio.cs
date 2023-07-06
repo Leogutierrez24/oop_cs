@@ -68,5 +68,77 @@ namespace ejercicio06
             form.ShowDialog();
             this.ActualizarForm();
         }
+
+        private void VerReserva_btn_Click(object sender, EventArgs e)
+        {
+            if (Reservas_listBox.SelectedItems.Count == 1)
+            {
+                VerReserva_frm form = new VerReserva_frm(Reservas_listBox.SelectedItem as Reserva);
+                form.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Se necesita elegir una reserva para poder continuar.");
+            }
+        }
+
+        private void RegistrarCheckin_btn_Click(object sender, EventArgs e)
+        {
+            if (Reservas_listBox.SelectedItems.Count == 1)
+            {
+                Reserva reservaElegida = Reservas_listBox.SelectedItem as Reserva;
+
+                int resultado = this.hotel.RegistrarOcupacion(reservaElegida);
+
+                if (resultado != -1)
+                {
+                    MessageBox.Show($"Se realizo el checkin de la reserva: 00{reservaElegida.numeroReserva} con éxito.");
+                } else
+                {
+                    MessageBox.Show("No se puede concretar la operación de checkin.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Se necesita elegir una reserva para poder continuar.");
+            }
+        }
+
+        private void RegistrarCheckout_btn_Click(object sender, EventArgs e)
+        {
+            if (Reservas_listBox.SelectedItems.Count == 1)
+            {
+                Reserva reservaElegida = Reservas_listBox.SelectedItem as Reserva;
+
+                int resultado = this.hotel.RegistrarDesocupacion(reservaElegida);
+
+                if (resultado != -1)
+                {
+                    MessageBox.Show($"Se realizo el checkout de la reserva: 00{reservaElegida.numeroReserva} con éxito.");
+                    this.ActualizarForm();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede concretar la operación de checkout.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Se necesita elegir una reserva para poder continuar.");
+            }
+        }
+
+        private void CancelarReserva_btn_Click(object sender, EventArgs e)
+        {
+            if (Reservas_listBox.SelectedItems.Count == 1)
+            {
+                CancelarReserva_frm form = new CancelarReserva_frm(this.hotel, this.Reservas_listBox.SelectedItem as Reserva);
+                form.ShowDialog();
+                this.ActualizarForm();
+            }
+            else
+            {
+                MessageBox.Show("Se necesita elegir una reserva para poder continuar.");
+            }
+        }
     }
 }

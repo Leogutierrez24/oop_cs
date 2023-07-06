@@ -43,10 +43,22 @@ namespace ejercicio06
             get { return _vistaMar; }
         }
 
+        private int _ocupaciones = 0;
+
+        public int Ocupaciones
+        {
+            get { return _ocupaciones; }
+        }
+
         public Habitacion(int numero, bool vistaMar = false)
         {
             this._numero = numero;
             this._vistaMar = vistaMar;
+        }
+
+        public void Ocupar()
+        {
+            this._ocupaciones++;
         }
     }
 }

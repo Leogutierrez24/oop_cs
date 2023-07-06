@@ -40,6 +40,8 @@
             this.GenerarResumen_btn = new System.Windows.Forms.Button();
             this.GenerarReserva_btn = new System.Windows.Forms.Button();
             this.RegistrarHuesped_btn = new System.Windows.Forms.Button();
+            this.RegistrarCheckin_btn = new System.Windows.Forms.Button();
+            this.RegistrarCheckout_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,12 +78,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.RegistrarCheckout_btn);
+            this.groupBox2.Controls.Add(this.RegistrarCheckin_btn);
             this.groupBox2.Controls.Add(this.CancelarReserva_btn);
             this.groupBox2.Controls.Add(this.VerReserva_btn);
             this.groupBox2.Controls.Add(this.Reservas_listBox);
             this.groupBox2.Location = new System.Drawing.Point(344, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(307, 247);
+            this.groupBox2.Size = new System.Drawing.Size(306, 289);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reservas";
@@ -90,10 +94,11 @@
             // 
             this.CancelarReserva_btn.Location = new System.Drawing.Point(91, 198);
             this.CancelarReserva_btn.Name = "CancelarReserva_btn";
-            this.CancelarReserva_btn.Size = new System.Drawing.Size(98, 39);
+            this.CancelarReserva_btn.Size = new System.Drawing.Size(79, 39);
             this.CancelarReserva_btn.TabIndex = 3;
             this.CancelarReserva_btn.Text = "Cancelar Reserva";
             this.CancelarReserva_btn.UseVisualStyleBackColor = true;
+            this.CancelarReserva_btn.Click += new System.EventHandler(this.CancelarReserva_btn_Click);
             // 
             // VerReserva_btn
             // 
@@ -103,6 +108,7 @@
             this.VerReserva_btn.TabIndex = 2;
             this.VerReserva_btn.Text = "Ver Reserva";
             this.VerReserva_btn.UseVisualStyleBackColor = true;
+            this.VerReserva_btn.Click += new System.EventHandler(this.VerReserva_btn_Click);
             // 
             // Reservas_listBox
             // 
@@ -120,7 +126,7 @@
             this.groupBox3.Controls.Add(this.RegistrarHuesped_btn);
             this.groupBox3.Location = new System.Drawing.Point(12, 265);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(333, 82);
+            this.groupBox3.Size = new System.Drawing.Size(253, 125);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Operaciones";
@@ -137,7 +143,7 @@
             // 
             // GenerarResumen_btn
             // 
-            this.GenerarResumen_btn.Location = new System.Drawing.Point(249, 32);
+            this.GenerarResumen_btn.Location = new System.Drawing.Point(6, 77);
             this.GenerarResumen_btn.Name = "GenerarResumen_btn";
             this.GenerarResumen_btn.Size = new System.Drawing.Size(75, 39);
             this.GenerarResumen_btn.TabIndex = 2;
@@ -164,11 +170,31 @@
             this.RegistrarHuesped_btn.UseVisualStyleBackColor = true;
             this.RegistrarHuesped_btn.Click += new System.EventHandler(this.RegistrarHuesped_btn_Click);
             // 
+            // RegistrarCheckin_btn
+            // 
+            this.RegistrarCheckin_btn.Location = new System.Drawing.Point(6, 243);
+            this.RegistrarCheckin_btn.Name = "RegistrarCheckin_btn";
+            this.RegistrarCheckin_btn.Size = new System.Drawing.Size(79, 39);
+            this.RegistrarCheckin_btn.TabIndex = 3;
+            this.RegistrarCheckin_btn.Text = "Registrar Checkin";
+            this.RegistrarCheckin_btn.UseVisualStyleBackColor = true;
+            this.RegistrarCheckin_btn.Click += new System.EventHandler(this.RegistrarCheckin_btn_Click);
+            // 
+            // RegistrarCheckout_btn
+            // 
+            this.RegistrarCheckout_btn.Location = new System.Drawing.Point(91, 243);
+            this.RegistrarCheckout_btn.Name = "RegistrarCheckout_btn";
+            this.RegistrarCheckout_btn.Size = new System.Drawing.Size(79, 39);
+            this.RegistrarCheckout_btn.TabIndex = 4;
+            this.RegistrarCheckout_btn.Text = "Registrar Checkout";
+            this.RegistrarCheckout_btn.UseVisualStyleBackColor = true;
+            this.RegistrarCheckout_btn.Click += new System.EventHandler(this.RegistrarCheckout_btn_Click);
+            // 
             // Frm_Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 355);
+            this.ClientSize = new System.Drawing.Size(661, 399);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -196,6 +222,8 @@
         private System.Windows.Forms.Button GenerarReserva_btn;
         private System.Windows.Forms.Button RegistrarHuesped_btn;
         private System.Windows.Forms.Button VerHuespedes_btn;
+        private System.Windows.Forms.Button RegistrarCheckin_btn;
+        private System.Windows.Forms.Button RegistrarCheckout_btn;
     }
 }
 

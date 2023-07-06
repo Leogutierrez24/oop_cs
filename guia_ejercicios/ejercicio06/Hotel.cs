@@ -9,6 +9,14 @@ namespace ejercicio06
     public class Hotel
     {
         private int _numReservas = 0;
+        private int _numComprobantes = 0;
+
+        private float _recaudacion;
+
+        public float Recaudacion
+        {
+            get { return _recaudacion; }
+        }
 
         private List<Habitacion> _habitaciones = new List<Habitacion>();
 
@@ -22,6 +30,13 @@ namespace ejercicio06
         public List<Reserva> Reservas
         {
             get { return _reservas; }
+        }
+
+        private List<Reserva> _reservasConcretadas = new List<Reserva>();
+
+        public List<Reserva> ReservasConcretadas
+        {
+            get { return _reservasConcretadas; }
         }
 
         private List<Huesped> _huespedes = new List<Huesped>();
@@ -38,15 +53,31 @@ namespace ejercicio06
             get { return _adicionales; }
         }
 
+        private List<Habitacion> _habitacionesOcupadas = new List<Habitacion>();
+
+        public List<Habitacion> HabitacionesOcupadas
+        {
+            get { return _habitacionesOcupadas; }
+        }
+
+        private List<Comprobante> _comprobantes = new List<Comprobante>();
+
+        public List<Comprobante> Comprobantes
+        {
+            get { return _comprobantes; }
+        }
+
         public Hotel() 
         {
             this.InicializarHotel();
+            this._recaudacion = 0;
         }
 
-        // método de inicialización de habitaciones.
+        // inicialización del ejercicio.
 
         private void InicializarHotel()
         {
+            // habitaciones
             HabSimple hab_1 = new HabSimple(1);
             HabSimple hab_2 = new HabSimple(2, true);
             HabDoble hab_3 = new HabDoble(3);
@@ -57,18 +88,23 @@ namespace ejercicio06
 
             this._habitaciones = new List<Habitacion>{hab_1, hab_2, hab_3, hab_4, hab_5, hab_6, hab_7 };
 
+            // huespedes
             Huesped huesped_01 = new Huesped(32145543, "Martín", "Garabal", 31, DateTime.Now);
             Huesped huesped_02 = new Huesped(34213454, "Miguel", "Granados", 36, DateTime.Now);
 
             this._huespedes = new List<Huesped> { huesped_01, huesped_02 };
 
+            // adicionales
             Adicional adicional1 = new Adicional("Agregar cuna a la habitación", 50);
             Adicional adicional2 = new Adicional("Consumo del frigobar", 17);
 
             this._adicionales = new List<Adicional> { adicional1, adicional2 };
+
+            // reservas
+            this.GenerarReserva(hab_3, new List<Huesped> { huesped_01 }, new List<Adicional>(), new DateTime(2023, 12, 19), new DateTime(2023, 12, 24), 210, 2100);
         }
 
-        // métodos de operaciones con los huspedes
+        // operaciones con huspedes
 
         private int VerificarHuesped(long documento) // Verificación de si ya existe el huesped que se quiere registrar (por su doc.)
         {
@@ -99,7 +135,7 @@ namespace ejercicio06
             return comprobacion;
         }
 
-        // métodos de operaciones con reservas
+        // operaciones con reservas
 
         public float CalcularCosto(Habitacion habitacion, int cantDias, List<Adicional> adicionales)
         {
@@ -146,14 +182,54 @@ namespace ejercicio06
                     total
                 );
 
-            this._numReservas++;
+            if (this.ComprobarDisponibilidad(nuevaReserva) != -1)
+            {
+                this._numReservas++;
 
-            this._reservas.Add(nuevaReserva);
+                this._reservas.Add(nuevaReserva);
 
+                this._numComprobantes++;
+
+                Comprobante comprobanteReserva = new Comprobante(this._numComprobantes, nuevaReserva.FechaReserva, nuevaReserva.Deposito, MotivoComprobante.Deposito, nuevaReserva.numeroReserva);
+                this._comprobantes.Add(comprobanteReserva);
+            } else
+            {
+                nuevaReserva = null;
+            }
+            
             return nuevaReserva;
         }
 
-        // métodos de operaciones con adicionales
+        private int ComprobarDisponibilidad(Reserva nuevaReserva)
+        {
+            int resultado = 0;
+
+            List<Reserva> reservasMismaHabitacion = this._reservas.FindAll( reserva => reserva.Habitacion.Numero == nuevaReserva.Habitacion.Numero);
+
+            if (reservasMismaHabitacion.Count != 0)
+            {
+                if (reservasMismaHabitacion.Exists(reserva => nuevaReserva.FechaEntrada.ToShortDateString() == reserva.FechaEntrada.ToShortDateString() || nuevaReserva.FechaEntrada.ToShortDateString() == reserva.FechaSalida.ToShortDateString()))
+                {
+                    resultado = -1;
+                } else if (reservasMismaHabitacion.Exists(reserva => nuevaReserva.FechaSalida.ToShortDateString() == reserva.FechaEntrada.ToShortDateString() || nuevaReserva.FechaSalida.ToShortDateString() == reserva.FechaSalida.ToShortDateString())) 
+                {
+                    resultado = -1;
+                } else if (reservasMismaHabitacion.Exists(reserva => nuevaReserva.FechaEntrada < reserva.FechaEntrada && nuevaReserva.FechaSalida > reserva.FechaEntrada))
+                {
+                    resultado = -1;
+                } else if (reservasMismaHabitacion.Exists(reserva => nuevaReserva.FechaEntrada < reserva.FechaSalida && nuevaReserva.FechaSalida > reserva.FechaSalida))
+                {
+                    resultado = -1;
+                } else if (reservasMismaHabitacion.Exists(reserva => nuevaReserva.FechaEntrada > reserva.FechaEntrada && nuevaReserva.FechaSalida < reserva.FechaSalida))
+                {
+                    resultado = -1;
+                }
+            }
+
+            return resultado;
+        }
+
+        // operaciones con adicionales
 
         public Adicional CrearAdicional(string descripcion, float costo)
         {
@@ -165,6 +241,88 @@ namespace ejercicio06
             }
 
             return nuevoAdicional;
+        }
+
+        // operaciones con habitaciones (checkin, checkout)
+
+        public int RegistrarOcupacion(Reserva reserva)
+        {
+            int resultado;
+
+            if (reserva.CheckinEstado != true && reserva.CheckoutEstado != true)
+            {
+                this._habitacionesOcupadas.Add(reserva.Habitacion);
+                reserva.Habitacion.Ocupar();
+                reserva.ConcretarCheckin();
+                resultado = 0;
+            } else
+            {
+                resultado = -1;
+            }
+
+            return resultado;
+        }
+
+        public int RegistrarDesocupacion(Reserva reserva)
+        {
+            int resultado;
+
+            if (reserva.CheckinEstado != false && reserva.CheckoutEstado != true)
+            {
+                Comprobante nuevoComprobante = new Comprobante(this._numComprobantes + 1, DateTime.Now, reserva.Subtotal, MotivoComprobante.Total, reserva.numeroReserva);
+                this._numComprobantes++;
+                this._comprobantes.Add(nuevoComprobante);
+
+                this._habitacionesOcupadas.Remove(reserva.Habitacion);
+
+                this._reservasConcretadas.Add(reserva);
+                this._reservas.Remove(reserva);
+                resultado = 0;
+            } else
+            {
+                resultado = -1;
+            }
+
+            return resultado;
+        }
+
+        // métodos de cancelación
+
+        public Tuple<string, float> CalcularDevolucion(Reserva reserva)
+        {
+            string motivo;
+            float resultado;
+
+            DateTime fechaCancelacion = DateTime.Now;
+            TimeSpan dif = reserva.FechaEntrada - fechaCancelacion;
+            int dias = dif.Days;
+
+            float totalReserva = reserva.Subtotal;
+            float depositoAbonado = reserva.Deposito;
+            float pagoMinimo = (totalReserva * 10) / 100;
+
+            if (dias < 2)
+            {
+                resultado = depositoAbonado - pagoMinimo;
+                motivo = $"La diferencia de días es de: {dias} por lo que el reintegro es de: ${(resultado < 0 ? 0 : resultado)}";
+            } else if (dias <= 7)
+            {
+                resultado = depositoAbonado - (pagoMinimo / 2);
+                motivo = $"La diferencia de días es de: {dias} por lo que el reintegro es de: ${resultado}";
+            } else
+            {
+                resultado = depositoAbonado;
+                motivo = "La diferencia de días es mayor a la semana por lo que se reintegra el total.";
+            }
+
+            return new Tuple<string, float>(motivo, resultado);
+        }
+
+        public void CancelarReserva(Reserva reserva)
+        {
+            float devolucion = this.CalcularDevolucion(reserva).Item2;
+            this._recaudacion -= devolucion;
+            this._reservas.Remove(reserva);
         }
     }
 }

@@ -59,6 +59,13 @@
     <Compile Include="AgregarExtra_frm.Designer.cs">
       <DependentUpon>AgregarExtra_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CancelarReserva_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelarReserva_frm.Designer.cs">
+      <DependentUpon>CancelarReserva_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comprobante.cs" />
     <Compile Include="GenerarReserva_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,11 +100,20 @@
     <Compile Include="VerHabitacion_frm.Designer.cs">
       <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerReserva_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerReserva_frm.Designer.cs">
+      <DependentUpon>VerReserva_frm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarExtra_frm.resx">
       <DependentUpon>AgregarExtra_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarHuesped_frm.resx">
       <DependentUpon>AgregarHuesped_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelarReserva_frm.resx">
+      <DependentUpon>CancelarReserva_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Inicio.resx">
       <DependentUpon>Frm_Inicio.cs</DependentUpon>
@@ -119,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="VerHabitacion_frm.resx">
       <DependentUpon>VerHabitacion_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerReserva_frm.resx">
+      <DependentUpon>VerReserva_frm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
