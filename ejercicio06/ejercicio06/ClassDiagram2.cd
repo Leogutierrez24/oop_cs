@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ejercicio06.Adicional">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAACAEAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\Adicional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.Comprobante">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABQAAAAAAACAEAACEAAAAAAAAAAAAQAAAAAEABACA=</HashCode>
+      <FileName>Clases\Comprobante.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.HabCuadruple" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\HabCuadruple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.HabDoble" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\HabDoble.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.Habitacion" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAIAKAAACAACAAAAEgAQQAAAAAABAAAAAABAAA=</HashCode>
+      <FileName>Clases\Habitacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.HabSimple" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\HabSimple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.HabTriple" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\HabTriple.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.Hotel">
+    <Position X="9" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAEQQlABhIAEAAAAGBxAQQEMAACADAEBAARCAAAAAA=</HashCode>
+      <FileName>Clases\Hotel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.Huesped">
+    <Position X="4.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAQEAAAAgAAAAAAAAgACAAAAAAIIAoA=</HashCode>
+      <FileName>Clases\Huesped.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ejercicio06.Reserva">
+    <Position X="6.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAFIEABAAgEEEAEAIoAIAAAAAgAAQAEoAAQAAICAIA=</HashCode>
+      <FileName>Clases\Reserva.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
