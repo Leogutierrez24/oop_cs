@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MUSEO
 {
-    public partial class Form1 : Form
+    public partial class Inicio_frm : Form
     {
-        public Form1()
+        public Inicio_frm()
         {
             InitializeComponent();
         }

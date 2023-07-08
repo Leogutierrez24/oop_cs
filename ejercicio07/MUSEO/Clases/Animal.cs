@@ -12,7 +12,13 @@ namespace MUSEO
         Herbivoro = 1
     }
 
-    public class Animal : SerVivo
+    public enum Postura
+    {
+        Bipedo = 0,
+        Cuadrupedo = 1,
+    }
+
+    public abstract class Animal : SerVivo
     {
         private int _edad;
 
@@ -40,6 +46,57 @@ namespace MUSEO
             this._tipoAlimentacion = tipoAlimentacion;
             this._alimentacion = alimentacion;
             this._edad = edad;
+        }
+
+        public Animal(string nombre, TipoAlimentacion tipoAlimentacion, SerVivo alimentacion, int edad) : base(nombre)
+        {
+            this._tipoAlimentacion = tipoAlimentacion;
+            this._alimentacion.Add(alimentacion);
+            this._edad = edad;
+        }
+
+        public int EstablecerAlimentacion(SerVivo alimento)
+        {
+            int resultado;
+
+            if ((int)this._tipoAlimentacion == 1 && !alimento.Equals(typeof(Animal))){
+                this._alimentacion.Add(alimento);
+                resultado = 0;
+            } else
+            {
+                resultado = -1;
+            }
+
+            return resultado;
+        }
+
+        public int EstablecerAlimentacion(List<SerVivo> alimentos)
+        {
+            int resultado;
+            int[] resultados = { };
+
+            alimentos.ForEach(alimento =>
+            {
+                if (this._tipoAlimentacion == TipoAlimentacion.Herbivoro && !alimento.Equals(typeof(Animal)))
+                {
+                    resultados.Append(0);
+                }
+                else
+                {
+                    resultados.Append(-1);
+                }
+            });
+
+            if (!resultados.Contains(-1))
+            {
+                alimentos.ForEach(alimento => this._alimentacion.Add(alimento));
+                resultado = 0;
+            } else
+            {
+                resultado = -1;
+            }
+
+            return resultado;
         }
     }
 }

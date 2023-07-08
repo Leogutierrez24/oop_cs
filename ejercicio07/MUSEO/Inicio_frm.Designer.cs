@@ -1,7 +1,7 @@
 ﻿
 namespace MUSEO
 {
-    partial class Form1
+    partial class Inicio_frm
     {
         /// <summary>
         /// Variable del diseñador necesaria.

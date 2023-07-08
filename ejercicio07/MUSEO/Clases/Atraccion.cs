@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace MUSEO
 {
+    public enum Sector
+    {
+        Acuatico = 0,
+        Terrestre = 1,
+        Aereo = 2,
+    }
+
     public class Atraccion
     {
         private string _nombre;
@@ -15,11 +22,11 @@ namespace MUSEO
             get { return _nombre; }
         }
 
-        private Habitat _habitat;
+        private Sector _sector;
 
-        public Habitat Habitat
+        public Sector Sector
         {
-            get { return _habitat; }
+            get { return _sector; }
         }
 
         private List<Animal> _animales = new List<Animal>();
@@ -29,11 +36,19 @@ namespace MUSEO
             get { return _animales; }
         }
 
-        public Atraccion(string nombre, Habitat habitat, List<Animal> animales)
+        private float _costo;
+
+        public float Costo
+        {
+            get { return _costo; }
+        }
+
+        public Atraccion(string nombre, Sector sector, List<Animal> animales, float costo)
         {
             this._nombre = nombre;
-            this._habitat = habitat;
+            this._sector = sector;
             this._animales = animales;
+            this._costo = costo;
         }
     }
 }
