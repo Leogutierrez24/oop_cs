@@ -49,9 +49,29 @@
     <Compile Include="Clases\Aereo.cs" />
     <Compile Include="Clases\Animal.cs" />
     <Compile Include="Clases\Atraccion.cs" />
+    <Compile Include="Clases\Museo.cs" />
     <Compile Include="Clases\Pasaporte.cs" />
     <Compile Include="Clases\Terrestre.cs" />
+    <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\Visitante.cs" />
+    <Compile Include="Formularios\EstablecerAlimentacion_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\EstablecerAlimentacion_frm.Designer.cs">
+      <DependentUpon>EstablecerAlimentacion_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NuevoAnimal_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NuevoAnimal_frm.Designer.cs">
+      <DependentUpon>NuevoAnimal_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VerAtraccion_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VerAtraccion_frm.Designer.cs">
+      <DependentUpon>VerAtraccion_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio_frm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +83,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\SerVivo.cs" />
+    <Compile Include="TiposHabitat.cs" />
+    <EmbeddedResource Include="Formularios\EstablecerAlimentacion_frm.resx">
+      <DependentUpon>EstablecerAlimentacion_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NuevoAnimal_frm.resx">
+      <DependentUpon>NuevoAnimal_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VerAtraccion_frm.resx">
+      <DependentUpon>VerAtraccion_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio_frm.resx">
+      <DependentUpon>Inicio_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,5 +119,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

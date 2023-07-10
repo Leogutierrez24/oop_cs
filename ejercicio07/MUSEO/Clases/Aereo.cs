@@ -22,13 +22,10 @@ namespace MUSEO
             get { return _velocidadVuelo; }
         }
 
-        public Aereo(string nombre, TipoAlimentacion tipoAlimentacion, List<SerVivo> alimentacion, int edad) : base(nombre, tipoAlimentacion, alimentacion, edad)
+        public Aereo(string nombre, TipoAlimentacion tipoAlimentacion, long periodo, float distanciaVision, float velocidadVuelo) : base(nombre, tipoAlimentacion, periodo)
         {
-        }
-
-        public Aereo(string nombre, TipoAlimentacion tipoAlimentacion, SerVivo alimentacion, int edad) : base(nombre, tipoAlimentacion, alimentacion, edad)
-        {
-
+            this._distanciaVision = distanciaVision;
+            this._velocidadVuelo = velocidadVuelo;
         }
     }
 }

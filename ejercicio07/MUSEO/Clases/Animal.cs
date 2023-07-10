@@ -20,11 +20,11 @@ namespace MUSEO
 
     public abstract class Animal : SerVivo
     {
-        private int _edad;
+        private long _periodoVida;
 
-        public int Edad
+        public long PeriodoVida
         {
-            get { return _edad; }
+            get { return _periodoVida; }
         }
 
         private TipoAlimentacion _tipoAlimentacion;
@@ -41,18 +41,10 @@ namespace MUSEO
             get { return _alimentacion; }
         }
 
-        public Animal(string nombre, TipoAlimentacion tipoAlimentacion, List<SerVivo> alimentacion, int edad) : base(nombre)
+        public Animal(string nombre, TipoAlimentacion tipoAlimentacion, long periodoVida) : base(nombre)
         {
             this._tipoAlimentacion = tipoAlimentacion;
-            this._alimentacion = alimentacion;
-            this._edad = edad;
-        }
-
-        public Animal(string nombre, TipoAlimentacion tipoAlimentacion, SerVivo alimentacion, int edad) : base(nombre)
-        {
-            this._tipoAlimentacion = tipoAlimentacion;
-            this._alimentacion.Add(alimentacion);
-            this._edad = edad;
+            this._periodoVida = periodoVida;
         }
 
         public int EstablecerAlimentacion(SerVivo alimento)

@@ -17,7 +17,7 @@ namespace MUSEO
 
         public SerVivo(string nombre)
         {
-            this._nombre = nombre;
+            this._nombre = nombre.ToUpper();
         }
     }
 }

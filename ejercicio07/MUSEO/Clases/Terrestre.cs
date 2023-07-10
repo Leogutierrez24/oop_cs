@@ -19,13 +19,7 @@ namespace MUSEO
             get { return _exoesqueleto; }
         }
 
-        public Terrestre(string nombre, TipoAlimentacion tipoAlimentacion, List<SerVivo> alimentacion, int edad, Postura postura, bool exoesqueleto = false) : base(nombre, tipoAlimentacion, alimentacion, edad)
-        {
-            this._postura = postura;
-            this._exoesqueleto = exoesqueleto;
-        }
-
-        public Terrestre(string nombre, TipoAlimentacion tipoAlimentacion, SerVivo alimentacion, int edad, Postura postura, bool exoesqueleto = false) : base(nombre, tipoAlimentacion, alimentacion, edad)
+        public Terrestre(string nombre, TipoAlimentacion tipoAlimentacion, long periodo, Postura postura, bool exoesqueleto = false) : base(nombre, tipoAlimentacion, periodo)
         {
             this._postura = postura;
             this._exoesqueleto = exoesqueleto;

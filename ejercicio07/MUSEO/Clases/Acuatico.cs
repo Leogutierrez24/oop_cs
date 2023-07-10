@@ -8,7 +8,7 @@ namespace MUSEO
 {
     public class Acuatico : Animal
     {
-        public Acuatico(string nombre, TipoAlimentacion tipoAlimentacion, List<SerVivo> alimentacion, int edad) : base(nombre, tipoAlimentacion, alimentacion, edad)
+        public Acuatico(string nombre, TipoAlimentacion tipoAlimentacion, long periodo) : base(nombre, tipoAlimentacion, periodo)
         {
         }
     }

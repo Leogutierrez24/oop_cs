@@ -43,12 +43,37 @@ namespace MUSEO
             get { return _costo; }
         }
 
+        private float _recaudacion = 0;
+
+        public float Recaudacion
+        {
+            get { return _recaudacion; }
+        }
+
+        private int _visitantes = 0;
+
+        public int Visitantes
+        {
+            get { return _visitantes; }
+        }
+
         public Atraccion(string nombre, Sector sector, List<Animal> animales, float costo)
         {
             this._nombre = nombre;
             this._sector = sector;
             this._animales = animales;
             this._costo = costo;
+        }
+
+        public void NuevaVisita(float recaudacion, int visitantes)
+        {
+            this._recaudacion += recaudacion;
+            this._visitantes += visitantes;
+        }
+
+        public void AgregarAnimal(Animal nuevoAnimal)
+        {
+            this._animales.Add(nuevoAnimal);
         }
     }
 }
