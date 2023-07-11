@@ -51,7 +51,7 @@ namespace MUSEO.Clases
             this.AplicarDescuento();
         }
 
-        public float CalcularCosto(float costoAtraccion, int cantAtracciones)
+        private float CalcularCosto(float costoAtraccion, int cantAtracciones)
         {
             float costo;
 
@@ -72,7 +72,7 @@ namespace MUSEO.Clases
             return costo;
         }
 
-        public bool ComprobarDescuento()
+        private bool ComprobarDescuento()
         {
             bool comprobacion = false;
             int edad = this._visitante.CalcularEdad();

@@ -11,4 +11,4 @@ I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.exe
 I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.pdb
 I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.Formularios.VerAtraccion_frm.resources
 I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.Formularios.NuevoAnimal_frm.resources
-I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.Formularios.EstablecerAlimentacion_frm.resources
+I:\Facultad\poo\guia\development\ejercicio07\MUSEO\obj\Debug\MUSEO.Formularios.VenderEntrada_frm.resources

@@ -55,7 +55,8 @@ namespace MUSEO
 
         private void VenderEntrada_btn_Click(object sender, EventArgs e)
         {
-
+            VenderEntrada_frm form = new VenderEntrada_frm(this.museo);
+            form.ShowDialog();
         }
 
         private void ConsultarRecaudacion_btn_Click(object sender, EventArgs e)

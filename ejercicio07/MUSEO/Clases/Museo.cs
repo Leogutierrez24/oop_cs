@@ -96,5 +96,41 @@ namespace MUSEO.Clases
 
             return resultado;
         }
+
+        public float CalcularSubtotal(List<Atraccion> atracciones)
+        {
+            float resultado = 0;
+
+            atracciones.ForEach(atraccion => resultado += atraccion.Costo);
+
+            return resultado;
+        }
+
+        public float CalcularDescuento(List<Atraccion> atracciones, DateTime fechaNacimiento)
+        {
+            float resultado = this.CalcularSubtotal(atracciones);
+            TimeSpan rangoDeEdad = DateTime.Now - fechaNacimiento;
+            int visitanteEdad = rangoDeEdad.Days / 365;
+
+            if (atracciones.Count == 2)
+            {
+                resultado -= (resultado * 10 / 100);
+            } else if(atracciones.Count == 3)
+            {
+                resultado -= (resultado * 30 / 100);
+            }
+
+            if (visitanteEdad > 65 || visitanteEdad < 12)
+            {
+                resultado /= 2;
+            }
+
+            return resultado;
+        }
+
+        /*public Venta GenerarVenta()
+        {
+            return new Venta();
+        }*/
     }
 }

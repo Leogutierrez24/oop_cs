@@ -54,17 +54,17 @@
     <Compile Include="Clases\Terrestre.cs" />
     <Compile Include="Clases\Venta.cs" />
     <Compile Include="Clases\Visitante.cs" />
-    <Compile Include="Formularios\EstablecerAlimentacion_frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\EstablecerAlimentacion_frm.Designer.cs">
-      <DependentUpon>EstablecerAlimentacion_frm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\NuevoAnimal_frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\NuevoAnimal_frm.Designer.cs">
       <DependentUpon>NuevoAnimal_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\VenderEntrada_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\VenderEntrada_frm.Designer.cs">
+      <DependentUpon>VenderEntrada_frm.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\VerAtraccion_frm.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\SerVivo.cs" />
     <Compile Include="TiposHabitat.cs" />
-    <EmbeddedResource Include="Formularios\EstablecerAlimentacion_frm.resx">
-      <DependentUpon>EstablecerAlimentacion_frm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\NuevoAnimal_frm.resx">
       <DependentUpon>NuevoAnimal_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\VenderEntrada_frm.resx">
+      <DependentUpon>VenderEntrada_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\VerAtraccion_frm.resx">
       <DependentUpon>VerAtraccion_frm.cs</DependentUpon>
